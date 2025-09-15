@@ -1,5 +1,5 @@
 
-import Contact from "../pages/Contact"
+import Contact from "../pages/Login"
 import { Outlet } from 'react-router-dom'
 
 const ContactLayout = () => {

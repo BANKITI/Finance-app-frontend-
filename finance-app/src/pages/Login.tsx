@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-const Contact = () => {
+const Login = () => {
   const navigate = useNavigate()
   return (
     <div>
@@ -13,4 +13,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Login

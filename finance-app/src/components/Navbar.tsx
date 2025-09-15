@@ -11,14 +11,16 @@ const Navbar = () => {
     <div className='navbar'>
       <div className="flex">
 
-        <img src={logo} alt="" width="" />Youngshun Network Company</div>
+        <img src={logo} alt="" width="" />BANKITI</div>
         <ul>
             <NavLink to='/'><li>Home</li></NavLink>
-            <NavLink to='/products'><li>Products</li></NavLink>
-            < NavLink to='/about'><li>About</li></NavLink>
-            <NavLink to='/contact'><li>Contact</li></NavLink>
+            < NavLink to='/how'><li>How It Works</li></NavLink>
+            <NavLink to='/borrow'><li>Borrow</li></NavLink>
+            <NavLink to='/lend'><li>Lend/Invest</li></NavLink>
+            <NavLink to='/rate'><li>Rates & Fees</li></NavLink>
+            {/* <NavLink to='/login'><li>Log in</li></NavLink> */}
         </ul>
-        <button onClick={() => navigate('/contact',{replace: true})}>Get Started</button>
+        <button onClick={() => navigate('/login',{replace: true})}>Log in</button>
     </div>
   )
 }

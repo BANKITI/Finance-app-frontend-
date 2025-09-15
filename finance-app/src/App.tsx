@@ -1,13 +1,15 @@
 
 import Home from './pages/Home';
-import Products from "./pages/Products";
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider,  } from "react-router-dom";
-import About from "./pages/About"
 import RootLayout from './layout/RootLayout';
 import ContactLayout from './layout/ContactLayout';
 import Contactinfo from './components/Contactinfo';
 import ContactForm from './components/Contact';
 import Notfound from './components/Notfound';
+import How from './pages/How';
+import Borrow from './pages/Borrow';
+import Lend from './pages/Lend';
+import Rate from './pages/Rate';
 
 
 
@@ -17,9 +19,12 @@ const App = () => {
     createRoutesFromElements(
       <Route path='/' element={<RootLayout/>}>
         <Route index element={<Home/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<ContactLayout/>}>
+        <Route path='/how' element={<How/>}/>
+        <Route path='/borrow' element={<Borrow/>}/>
+        <Route path='/lend' element={<Lend/>}/>
+        <Route path='/rate' element={<Rate/>}/>
+        
+        <Route path='/login' element={<ContactLayout/>}>
            <Route path='info' element={<Contactinfo/>}/>
            <Route path='form' element={<ContactForm/>}/>
         </Route>
