@@ -1,4 +1,4 @@
-const Contactinfo = () => {
+const Login = () => {
   return (
     <div>
         <div>Email: example@gmail.com</div>
@@ -9,4 +9,4 @@ const Contactinfo = () => {
   )
 }
 
-export default Contactinfo
+export default Login

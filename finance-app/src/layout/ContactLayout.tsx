@@ -1,11 +1,12 @@
 
-import Contact from "../pages/Login"
+import Signup from "../pages/Signup"
 import { Outlet } from 'react-router-dom'
 
 const ContactLayout = () => {
   return (
     <div>
-        <Contact/>
+        <Signup/>
+        
         <Outlet/>
     </div>
   )
