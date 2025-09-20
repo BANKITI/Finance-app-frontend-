@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -45,9 +47,9 @@ const Signup = () => {
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    const { FullName, password, confirmPassword } = formData;
+    const { FullName, password, confirmPassword,city,NationalIDCard,EmailAddress } = formData;
 
-    if (!FullName || !password || !confirmPassword) {
+    if (!FullName || !password || !confirmPassword || !city ||!EmailAddress ||!NationalIDCard) {
       setError('All fields are required.');
       return;
     }
@@ -184,7 +186,7 @@ const Signup = () => {
           <br />
           <button 
             type="submit" 
-            className="w-full hover:bg-blue-600 text-black font-semibold py-2 px-4 rounded-xl create" 
+            className="w-full bg-[#CAFE33]  text-black font-semibold py-2 px-4 rounded-xl " 
           >
             Create account
             
@@ -195,7 +197,18 @@ const Signup = () => {
          
 
         </form>
-        Already have an account?<div className='Log-button'><button onClick={()=>navigate('login')}> <b>Login</b> </button></div>
+        Already have an account?<div className='Log-button'><button onClick={() => navigate('/login',{replace: true})}> <b>Login</b> </button></div>
+
+        <div>
+        <Link to="/login"> Login
+        </Link>
+          
+        
+
+
+
+
+        </div>
       </div><br />
       <div></div> 
        
@@ -209,22 +222,7 @@ const Signup = () => {
 </div>
     
   );
-  // return (
-  //   <div>
-  //       <h1></h1>
-  //       <div>
-          
-
-
   
-
-  //       </div>
-  //       <div className='contact-buttons'>
-  //         <button onClick={()=>navigate('info')}>Contact Info</button>
-  //         <button onClick={()=>navigate('form')}>Contact Form</button>
-  //   </div>
-  //   </div>
-  // )
 }
 
 export default Signup

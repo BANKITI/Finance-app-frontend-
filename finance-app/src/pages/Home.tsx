@@ -161,7 +161,7 @@ const Home = () => {
         
         
         <div >
-          <p  >The borrower submits a loan application to the bank,either in person,online or through other channels. <br /> The application includes personal and financial information,such as income,employment history, credit score,<br /> and the purpose of the loan.</p>
+          <p  >The borrower submits a loan application to Bankiti,either in person,online or through other channels. <br /> The application includes personal and financial information,such as income,employment history, credit score,<br /> and the purpose of the loan.</p>
           <div className='flex justify-end'>
        <img src={motto} alt="" />
        </div>
@@ -177,7 +177,7 @@ const Home = () => {
        </div>
 
        <div>
-        <p>The bank request supporting documents from the borrower,such as identification proof,<br />statement document, and collateral details(if applicable).The bank verifies the information <br /> provided to access the borrowers` creditworthiness and elegibility for the loan.</p>
+        <p>The Bankiti request supporting documents from the borrower,such as identification proof,<br />statement document, and collateral details(if applicable).Bankiti verifies the information <br /> provided to access the borrowers` creditworthiness and elegibility for the loan.</p>
 
         <div>
         <img src={photo} alt="" />
@@ -189,7 +189,7 @@ const Home = () => {
 
        
        <div className=''>
-         <p>The bank conducts a credit assessment to evaluate the borrower`s creditworthiness and ability to repay the loan. <br /> This process involves analyzing the borrower`s credit history,income stability,debt-to-income ratio, and other factors</p>
+         <p>Bankiti conducts a credit assessment to evaluate the borrower`s creditworthiness and ability to repay the loan. <br /> This process involves analyzing the borrower`s credit history,income stability,debt-to-income ratio, and other factors</p>
          
        </div>
 
@@ -217,7 +217,7 @@ const Home = () => {
            
 
            <div>
-           <p>If the borrower meets the bank`s lending criteria and passes the  credit assessmnent the loan is approved. <br /> The bank determines the loan amount,the interest rate,the repayment term, and any associated fees.</p></div>
+           <p>If the borrower meets Bankiti`s lending criteria and passes the  credit assessmnent the loan is approved. <br />  Bankiti determines the loan amount,the interest rate,the repayment term, and any associated fees.</p></div>
          </div>
          
          
@@ -244,7 +244,7 @@ const Home = () => {
           <p>What documents do I need to provide to apply for a loan?  </p></div><br />
           <hr /><br />
           <div className='ml-5'>
-          <p>The documents required for a loan application may vary depending on the type if loan you are applying for.Generally,you will need to provide identification documents (such as Ghana Card,passport or driver`s license),proof of income (such as paystubs or tax returns) and  information about the collateral(if applicable).Our loan offices will guide you through the specific requirements during the application process. </p></div> 
+          <p>The documents required for a loan application may vary depending on the type of loan you are applying for.Generally,you will need to provide identification documents (such as Ghana Card,passport or driver`s license),proof of income (such as pay stubs or tax returns) and  information about the collateral(if applicable).Our loan offices will guide you through the specific requirements during the application process. </p></div> 
           </div>
           </div><br />
         

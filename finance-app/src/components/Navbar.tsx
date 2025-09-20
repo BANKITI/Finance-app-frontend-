@@ -19,7 +19,8 @@ const Navbar = () => {
             <NavLink to='/rate'><li>Rates & Fees</li></NavLink>
             
         </ul>
-        <button onClick={() => navigate('/signup', {replace: true})}>Log in</button>
+        <button onClick={() => navigate('/signup', {replace: true})}>Sign up</button>
+        <button onClick={() => navigate('/login', {replace: true})}>Log in</button>
          
         
         
