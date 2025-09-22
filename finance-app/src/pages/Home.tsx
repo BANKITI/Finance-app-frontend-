@@ -1,29 +1,20 @@
 import { useNavigate } from 'react-router-dom'
-// import logo from "../assets/Rectangle.png"
-// import money from "../assets/money.jpg"
-// import picture from "../assets/vector.png"
-// import group from "../assets/group.png"
-// import song from "../assets/song.png"
-// import card from "../assets/card.png"
-// import motto from "../assets/motto.png"
-// import dani from "../assets/dani.png"
-// import photo from "../assets/photo.png"
 import { FaEnvelope,FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
 const Home = () => {
   const navigate = useNavigate()
   return (
     <div className='m-5 p-7  '>
-      <div className='flex flex-row items-center justify-center gap-20'>
+      <div className='flex flex-row  gap-20'>
        <p> <b> Welcome to BANKITI <br />
         Empowering Your <br />  <div className='text-[rgba(139,188,0,1)]'>Financial Journey</div> <br /> </b>
 
        <br />
-        At Bankiti,our mission is to provide comprehensive banking solutions  that empower individuals <br />and business to achieve their financial goals.  We are commited to delivering personalized <br /> and innovative services that prioritize our customers` needs. 
+        At Bankiti,our mission is to provide comprehensive banking <br />solutions  that empower individuals and business to achieve <br />their financial goals.  We are commited to delivering personalized <br /> and innovative services that prioritize our customers` needs. 
         <p><br /><div className="account"><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
        </p>
        
        <div>
-           <img src="./Rectangle.png" alt="" width={500} />
+           <img src="./Rectangle.png" alt="" width={180} />
        </div>
 
       </div>

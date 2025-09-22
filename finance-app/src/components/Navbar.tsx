@@ -8,9 +8,11 @@ const Navbar = () => {
   return (
     
     <div className='navbar'>
-      <div className="flex">
+      <div>
 
-        BANKITI</div>
+        BANKITI
+
+      </div>
         <ul>
             <NavLink to='/'><li>Home</li></NavLink>
             
@@ -20,7 +22,7 @@ const Navbar = () => {
             
         </ul>
         <button onClick={() => navigate('/signup', {replace: true})}>Sign up</button>
-        {/* <button onClick={() => navigate('/login', {replace: true})}>Log in</button> */}
+  
          
         
         
