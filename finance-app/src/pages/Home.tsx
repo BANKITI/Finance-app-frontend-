@@ -7,7 +7,7 @@ const Home = () => {
       <div className='flex flex-row  gap-20'>
        <p> <b> Welcome to BANKITI <br />
         Empowering Your <br />  <div className='text-[rgba(139,188,0,1)]'>Financial Journey</div> <br /> </b>
-
+          
        <br />
         At Bankiti,our mission is to provide comprehensive banking <br />solutions  that empower individuals and business to achieve <br />their financial goals.  We are commited to delivering personalized <br /> and innovative services that prioritize our customers` needs. 
         <p><br /><div className="account"><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
