@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom'
-import logo from "../assets/Rectangle.png"
-import money from "../assets/money.jpg"
-import picture from "../assets/vector.png"
-import group from "../assets/group.png"
-import song from "../assets/song.png"
-import card from "../assets/card.png"
-import motto from "../assets/motto.png"
-import dani from "../assets/dani.png"
-import photo from "../assets/photo.png"
+// import logo from "../assets/Rectangle.png"
+// import money from "../assets/money.jpg"
+// import picture from "../assets/vector.png"
+// import group from "../assets/group.png"
+// import song from "../assets/song.png"
+// import card from "../assets/card.png"
+// import motto from "../assets/motto.png"
+// import dani from "../assets/dani.png"
+// import photo from "../assets/photo.png"
 import { FaEnvelope,FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
 const Home = () => {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ const Home = () => {
        </p>
        
        <div>
-           <img src={logo} alt="" width={500} />
+           <img src="./Rectangle.png" alt="" width={500} />
        </div>
 
       </div>
@@ -40,7 +40,7 @@ const Home = () => {
         </p>
          <div>
          <br />
-          <img src={money} alt="" width={500}/>
+          <img src="./money.jpg" alt="" width={500}/>
           </div> <br />
 
 
@@ -53,7 +53,7 @@ const Home = () => {
           <div className="border rounded-2xl w-70 h-70
           "> <br />
             <div className='flex items-center justify-center'>
-           <img src={picture} alt="" />
+           <img src="/vector.png" alt="" />
            
         </div> <br />
 
@@ -85,7 +85,7 @@ const Home = () => {
         
          <div className='border rounded-2xl h-70 w-70'><br />
             <div className='flex items-center justify-center'>
-              <img src={group} alt="" />
+              <img src="/group,png" alt="" />
             </div><br />
 
             <div className='flex items-center justify-center'>
@@ -114,7 +114,7 @@ const Home = () => {
 
          <div className='border rounded-2xl w-70 h-70'><br />
            <div className='flex items-center justify-center'>
-          <img src={song} alt="" />
+          <img src="song.png" alt="" />
            </div> <br />
 
            <div className='flex items-center justify-center'>
@@ -155,7 +155,7 @@ const Home = () => {
        <div className='flex gap-3'>
        <div>
          <div>
-            <img src={card} alt="" />
+            <img src="/card.png" alt="" />
          </div>
        </div>
         
@@ -163,7 +163,7 @@ const Home = () => {
         <div >
           <p  >The borrower submits a loan application to Bankiti,either in person,online or through other channels. <br /> The application includes personal and financial information,such as income,employment history, credit score,<br /> and the purpose of the loan.</p>
           <div className='flex justify-end'>
-       <img src={motto} alt="" />
+       <img src="/motto.png" alt="" />
        </div>
        </div>
        </div>
@@ -180,7 +180,7 @@ const Home = () => {
         <p>The Bankiti request supporting documents from the borrower,such as identification proof,<br />statement document, and collateral details(if applicable).Bankiti verifies the information <br /> provided to access the borrowers` creditworthiness and elegibility for the loan.</p>
 
         <div>
-        <img src={photo} alt="" />
+        <img src="/photo.png" alt="" />
 
        </div>
         <div>
@@ -194,7 +194,7 @@ const Home = () => {
        </div>
 
        <div>
-        <img src={dani} alt="" /></div>
+        <img src="/dani.png"alt="" /></div>
        </div><br />
     </div>
 
