@@ -44,7 +44,7 @@ const Home = () => {
           <div className="border rounded-2xl w-70 h-70
           "> <br />
             <div className='flex items-center justify-center'>
-           <img src="/vector.png" alt="" />
+           <img src="/Vector.png" alt="" />
            
         </div> <br />
 
@@ -76,7 +76,7 @@ const Home = () => {
         
          <div className='border rounded-2xl h-70 w-70'><br />
             <div className='flex items-center justify-center'>
-              <img src="/group,png" alt="" />
+              <img src="/group.png" alt="" />
             </div><br />
 
             <div className='flex items-center justify-center'>
