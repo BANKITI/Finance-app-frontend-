@@ -1,6 +1,6 @@
 
 import Home from './pages/Home';
-import { Link, Route, createBrowserRouter, createRoutesFromElements, RouterProvider,  } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider,  } from "react-router-dom";
 import RootLayout from './layout/RootLayout';
 import Notfound from './components/Notfound';
 import Borrow from './pages/Borrow';
