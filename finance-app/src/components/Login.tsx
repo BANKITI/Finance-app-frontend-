@@ -45,7 +45,7 @@ const Login = () => {
   return (
     <div >
 
-      <div className="flex items-center justify-center gap-10 flex-row-reverse ">
+      <div className="flex items-center justify-center gap-10 flex-row-reverse ml-10 mt-10">
       <div className="border rounded-2xl h-120 w-130">
         
         

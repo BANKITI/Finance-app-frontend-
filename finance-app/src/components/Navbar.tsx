@@ -20,12 +20,12 @@ const Navbar = () => {
             
         </ul>
         <button onClick={() => navigate('/signup', {replace: true})}>Sign up</button>
-        <button onClick={() => navigate('/login', {replace: true})}>Log in</button>
+        {/* <button onClick={() => navigate('/login', {replace: true})}>Log in</button> */}
          
         
         
     </div>
-  )
+  ) 
 }
 
 export default Navbar;

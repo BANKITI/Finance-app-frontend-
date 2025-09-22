@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 
 const Signup = () => {
@@ -188,7 +188,7 @@ const Signup = () => {
             type="submit" 
             className="w-full bg-[#CAFE33]  text-black font-semibold py-2 px-4 rounded-xl " 
           >
-            Create account
+            Continue
             
           </button>
 
@@ -200,8 +200,7 @@ const Signup = () => {
         Already have an account?<div className='Log-button'><button onClick={() => navigate('/login',{replace: true})}> <b>Login</b> </button></div>
 
         <div>
-        <Link to="/login"> Login
-        </Link>
+        
           
         
 
