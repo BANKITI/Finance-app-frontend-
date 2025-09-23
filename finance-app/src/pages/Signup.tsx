@@ -211,13 +211,7 @@ const Signup = () => {
       </div><br />
       <div></div> 
        
-      <div className="bg-[#CAFE33] border rounded-4xl p-6 w-110
-      h-150 text-center flex items-center justify-center">
-        
-     <p ><b>Sign Up <br />
-      Account</b></p>
       
-</div>
 </div>
     
   );

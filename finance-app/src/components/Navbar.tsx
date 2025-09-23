@@ -18,7 +18,7 @@ const Navbar = () => {
             
             <NavLink to='/borrow'><li>Borrow</li></NavLink>
             <NavLink to='/lend'><li>Lend/Invest</li></NavLink>
-            <NavLink to='/rate'><li>Rates & Fees</li></NavLink>
+            <NavLink to='/rate'><li>Rates</li></NavLink>
             
         </ul>
         <button onClick={() => navigate('/signup', {replace: true})}>Sign up</button>

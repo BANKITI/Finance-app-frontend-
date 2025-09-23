@@ -33,8 +33,10 @@ a.active{
   padding: 8px 16px;
   border: 16px;
   outline: 0;
-  border-radius: 1px;
+  border-radius: 5px;
   cursor: pointer;
+  width: 80px;
+  height: 28px;
 }
 
 .container{
@@ -48,7 +50,7 @@ a.active{
   outline: 0;
   border-radius: 12px;
   cursor: pointer;
-  width: 130px;
+  width: 99px;
   
   
 }
@@ -85,7 +87,7 @@ a.active{
   outline: 0;
   border-radius: 12px;
   cursor: pointer;
-  width: 110px;
+  width: 79px;
 
  }
 

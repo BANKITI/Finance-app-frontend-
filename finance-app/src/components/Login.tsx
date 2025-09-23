@@ -116,9 +116,7 @@ const Login = () => {
        
       </div>
 
-      <div className='border rounded-2xl w-130 h-120'>
-
-      </div></div>
+     </div>
 
 
        

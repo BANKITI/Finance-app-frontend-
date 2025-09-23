@@ -4,12 +4,12 @@ const Home = () => {
   const navigate = useNavigate()
   return (
     <div className='m-5 p-7  '>
-      <div className='flex flex-row  gap-20'>
+      <div className='flex flex-col'>
        <p> <b> Welcome to BANKITI <br />
         Empowering Your <br />  <div className='text-[rgba(139,188,0,1)]'>Financial Journey</div> <br /> </b>
           
        <br />
-        At Bankiti,our mission is to provide comprehensive banking <br />solutions  that empower individuals and business to achieve <br />their financial goals.  We are commited to delivering personalized <br /> and innovative services that prioritize our customers` needs. 
+        At Bankiti,our mission is to provide comprehensive <br />banking solutions  that empower individuals and business <br /> to achieve their financial goals.  We are commited to <br />delivering personalized  and innovative services that <br /> prioritize our customers` needs. 
         <p><br /><div className="account"><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
        </p>
        
@@ -17,11 +17,11 @@ const Home = () => {
            <img src="./Rectangle.png" alt="" width={180} />
        </div>
 
-      </div>
+      </div><br />
 
-      <div className='flex items-center justify-center gap-20 m-5 p-7'>
+      <div className='flex flex-col'>
         <p> <b>Quick and Easy <br /> Loans for Your <br /> <div className='text-[rgba(139,188,0,1)]'>Financial Needs </div> </b> <br /> 
-        Our loan services offer a hassle-free and streamlined borrowing  experience,providing you with  the funds you need in a timely  manner to meet your financial requirements.
+        Our loan services offer a hassle-free and streamlined borrowing <br /> experience,providing you with  the funds you need in a timely <br />  manner to meet your financial requirements.
 
         <div className="count "><button onClick={() => navigate('/signup',{replace: true})}>Get started</button></div> 
         
@@ -38,9 +38,9 @@ const Home = () => {
        
 
        </div><br />
-        <p className='flex items-center justify-center text-[rgba(139,188,0,1)]'>OUR SERVICES</p> <br />
+        <p className=' text-[rgba(139,188,0,1)]'>OUR SERVICES</p> <br />
 
-       <div className='flex gap-5 items-center justify-center'>
+       <div className='flex flex-col'>
           <div className="border rounded-2xl w-70 h-70
           "> <br />
             <div className='flex items-center justify-center'>
