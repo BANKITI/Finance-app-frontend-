@@ -14,12 +14,12 @@ a{
   display: flex;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.2);
-  gap: 20px;
+  gap: 15px;
 }
 
 .navbar ul{
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 
@@ -30,8 +30,6 @@ a.active{
 .navbar button{
   background: #CAFE33;
   color:#000000;
-  padding: 8px 16px;
-  border: 16px;
   outline: 0;
   border-radius: 5px;
   cursor: pointer;
