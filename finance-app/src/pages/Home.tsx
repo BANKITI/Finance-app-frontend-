@@ -131,19 +131,19 @@ const Home = () => {
          </div>
        </div><br /><br />
 
-       <div className='flex items-center justify-center text-[rgba(139,188,0,1)]'>
+       <div className='  text-[rgba(139,188,0,1)]'>
           <p><b>How we work?</b></p>
        </div> <br />
 
        <div>
-          <p className='flex justify-end text-[rgba(139,188,0,1)] mr-100'>Application</p>
+          <p className=' text-[rgba(139,188,0,1)] '>Application</p>
        </div>
 
       
 
        
 
-       <div className='flex gap-3'>
+       <div className='flex flex-col-reverse'>
        <div>
          <div>
             <img src="/card.png" alt="" />
@@ -152,23 +152,21 @@ const Home = () => {
         
         
         <div >
-          <p  >The borrower submits a loan application to Bankiti,either in person,online or through other channels. <br /> The application includes personal and financial information,such as income,employment history, credit score,<br /> and the purpose of the loan.</p>
-          <div className='flex justify-end'>
-       <img src="/motto.png" alt="" />
-       </div>
+          <p  >The borrower submits a loan application to Bankiti, <br />either in person,online or through other channels. <br /> The application includes personal and financial <br /> information,such as income,employment history,<br /> credit score,and the purpose of the loan.</p>
+          
        </div>
        </div>
        
        
        
-    <div className='flex justify-center items-center'>
+    <div className=''>
        <div>
        <div className=' text-[rgba(139,188,0,1)] '>
         <p> <b>Documentation and Verification</b></p>
        </div>
 
        <div>
-        <p>The Bankiti request supporting documents from the borrower,such as identification proof,<br />statement document, and collateral details(if applicable).Bankiti verifies the information <br /> provided to access the borrowers` creditworthiness and elegibility for the loan.</p>
+        <p>The Bankiti request supporting documents from <br /> the borrower,such as identification proof,statement <br /> document, and collateral details(if applicable).Bankiti <br /> verifies the information  provided to access the <br />borrowers` creditworthiness and elegibility for the loan.</p>
 
         <div>
         <img src="/photo.png" alt="" />
@@ -180,12 +178,11 @@ const Home = () => {
 
        
        <div className=''>
-         <p>Bankiti conducts a credit assessment to evaluate the borrower`s creditworthiness and ability to repay the loan. <br /> This process involves analyzing the borrower`s credit history,income stability,debt-to-income ratio, and other factors</p>
+         <p>Bankiti conducts a credit assessment to evaluate the borrower`s <br /> creditworthiness and ability to repay the loan.  This process <br />
+          involves analyzing the borrower`s credit history,income <br /> stability,debt-to-income ratio, and other factors</p>
          
        </div>
 
-       <div>
-        <img src="/dani.png"alt="" /></div>
        </div><br />
     </div>
 
@@ -199,29 +196,29 @@ const Home = () => {
 
        
       
-        <div className='flex items-center justify-center'>
+        <div className=''>
               <p className='text-[rgba(139,188,0,1)]'>Loan Approval</p>
            </div>
 
         
-        <div className='flex items-center justify-center'>
+        <div className=''>
            
 
            <div>
-           <p>If the borrower meets Bankiti`s lending criteria and passes the  credit assessmnent the loan is approved. <br />  Bankiti determines the loan amount,the interest rate,the repayment term, and any associated fees.</p></div>
-         </div>
+           <p>If the borrower meets Bankiti`s lending criteria and passes the  credit <br /> assessmnent the loan is approved.  Bankiti determines the loan amount,<br />the interest rate,the repayment term, and any associated fees.</p></div>
+         </div> <br />
          
          
-         <div className='flex items-center justify-center text-[rgba(139,188,0,1)]'>
+         <div className=' text-[rgba(139,188,0,1)]'>
            <p>Frequently Asked Questions</p>
            
          </div>
 
-         <div className='flex items-center justify-center'>
+         <div className=' '>
           Do you have any questions contact our team via support@gmail.com
          </div><br />
 
-        <div className='flex gap-5 items-center justify-center'>
+        <div className='flex flex-col'>
          <div className='border h-70 w-130'> <br />
          <div className='flex items-center justify-center'>How do I open an account with Bankiti?</div> <br />
         <hr /><br />
@@ -241,7 +238,7 @@ const Home = () => {
         
 
 
-      <div className='flex gap-5 justify-center items-center'>
+      <div className='flex flex-col'>
         <div className='border h-70 w-130'><br />
           <div className='flex items-center justify-center'>
           <p>How can I access my account online? </p></div><br />
