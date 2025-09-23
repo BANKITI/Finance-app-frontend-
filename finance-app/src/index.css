@@ -36,7 +36,7 @@ a.active{
   border-radius: 5px;
   cursor: pointer;
   width: 80px;
-  height: 28px;
+  height: 40px;
 }
 
 .container{
@@ -98,5 +98,5 @@ a.active{
   outline: 0;
   border-radius: 12px;
   cursor: pointer;
-  width: 99px;
+  width: 70px;
 }
