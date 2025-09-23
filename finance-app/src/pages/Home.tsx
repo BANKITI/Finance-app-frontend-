@@ -268,9 +268,9 @@ const Home = () => {
       </div>
      <hr /><br />
 
-     <div className='flex items-center  gap-1'>
-      <p className='flex'><FaEnvelope/>bankiti@gmail.com ||</p>
-      <p className='flex'><FaPhone/>+233 xxxxxxxxx ||</p>
+     <div className='flex items-center  gap-0.5'>
+      <p className='flex'><FaEnvelope/>bankiti@gmail.com</p>
+      <p className='flex'><FaPhone/>+233 xxxxxxxxx </p>
       <p className='flex'><FaMapMarkerAlt/>Kumasi,Ghana</p>
 
      </div>

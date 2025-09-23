@@ -55,7 +55,8 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <h2 className="text-2xl  mb-6 text-center"> <div><b>Account Login</b></div>
 
-             <div>If you are already a member you can login with your email address and password.</div><hr />
+             <div>If you are already a member you can login with your email address and password.</div><br />
+             <hr className="border border-black" /><br />
          
           </h2>
             
@@ -116,7 +117,7 @@ const Login = () => {
 
         </form>
         
-        Don`t have an account? <div className='Log-button'><button onClick={() => navigate('/signup',{replace: true})}> <b>Login</b> </button></div>
+        Don`t have an account? <div className='Log-button'><button onClick={() => navigate('/signup',{replace: true})}> <b>Create one</b> </button></div>
 
        
       </div>
