@@ -3,13 +3,13 @@ import { FaEnvelope,FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <div className='m-5 p-7  '>
+    <div className='m-2 '>
       <div className='flex flex-col'>
        <p> <b> Welcome to BANKITI <br />
         Empowering Your <br />  <div className='text-[rgba(139,188,0,1)]'>Financial Journey</div> <br /> </b>
           
        <br />
-        At Bankiti,our mission is to provide comprehensive <br />banking solutions  that empower individuals and business <br /> to achieve their financial goals.  We are commited to <br />delivering personalized  and innovative services that <br /> prioritize our customers` needs. 
+        At Bankiti,our mission is to provide comprehensive <br />banking solutions  that empower individuals and <br />businesses  to achieve their financial goals.We <br /> are commited to delivering personalized  and <br /> innovative services that  prioritize our customers`<br /> needs. 
         <p><br /><div className="account"><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
        </p>
        
@@ -21,7 +21,7 @@ const Home = () => {
 
       <div className='flex flex-col'>
         <p> <b>Quick and Easy <br /> Loans for Your <br /> <div className='text-[rgba(139,188,0,1)]'>Financial Needs </div> </b> <br /> 
-        Our loan services offer a hassle-free and streamlined borrowing <br /> experience,providing you with  the funds you need in a timely <br />  manner to meet your financial requirements.
+        Our loan services offer a hassle-free and <br /> streamlined borrowing experience,providing <br />you with  the funds you need in a timely <br />  manner to meet your financial requirements.
 
         <div className="count "><button onClick={() => navigate('/signup',{replace: true})}>Get started</button></div> 
         
@@ -31,7 +31,7 @@ const Home = () => {
         </p>
          <div>
          <br />
-          <img src="./money.jpg" alt="" width={500}/>
+          <img src="./money.jpg" alt="" width={300}/>
           </div> <br />
 
 
@@ -152,7 +152,7 @@ const Home = () => {
         
         
         <div >
-          <p  >The borrower submits a loan application to Bankiti, <br />either in person,online or through other channels. <br /> The application includes personal and financial <br /> information,such as income,employment history,<br /> credit score,and the purpose of the loan.</p>
+          <p  >The borrower submits a loan application <br /> to Bankiti, either in person,online or <br /> through other channels.  The application <br />includes personal and financial <br /> information,such as income,employment <br /> history, credit score,and the purpose of the <br /> loan.</p>
           
        </div>
        </div>
@@ -166,7 +166,7 @@ const Home = () => {
        </div>
 
        <div>
-        <p>The Bankiti request supporting documents from <br /> the borrower,such as identification proof,statement <br /> document, and collateral details(if applicable).Bankiti <br /> verifies the information  provided to access the <br />borrowers` creditworthiness and elegibility for the loan.</p>
+        <p>The Bankiti request supporting documents <br /> from  the borrower,such as identification <br /> proof,statement document, and collateral <br />details(if applicable).Bankiti  verifies the <br />information  provided to access the borrowers`<br /> creditworthiness and elegibility for the loan.</p>
 
         <div>
         <img src="/photo.png" alt="" />
@@ -178,8 +178,9 @@ const Home = () => {
 
        
        <div className=''>
-         <p>Bankiti conducts a credit assessment to evaluate the borrower`s <br /> creditworthiness and ability to repay the loan.  This process <br />
-          involves analyzing the borrower`s credit history,income <br /> stability,debt-to-income ratio, and other factors</p>
+         <p>Bankiti conducts a credit assessment to <br />evaluate the borrower`s creditworthiness <br />
+       and ability to repay the loan.  This process <br />
+          involves analyzing the borrower`s credit <br />history,income  stability,debt-to-income ratio,<br /> and other factors</p>
          
        </div>
 
@@ -205,7 +206,8 @@ const Home = () => {
            
 
            <div>
-           <p>If the borrower meets Bankiti`s lending criteria and passes the  credit <br /> assessmnent the loan is approved.  Bankiti determines the loan amount,<br />the interest rate,the repayment term, and any associated fees.</p></div>
+           <p>If the borrower meets Bankiti`s lending criteria <br /> and passes the  credit  assessmnent the loan <br />
+            is approved.  Bankiti determines the loan amount,<br />the interest rate,the repayment term, and any <br /> associated fees.</p></div>
          </div> <br />
          
          
@@ -215,11 +217,11 @@ const Home = () => {
          </div>
 
          <div className=' '>
-          Do you have any questions contact our team via support@gmail.com
+          Do you have any questions contact our team <br /> via support@gmail.com
          </div><br />
 
         <div className='flex flex-col'>
-         <div className='border h-70 w-130'> <br />
+         <div className='border h-70 w-95'> <br />
          <div className='flex items-center justify-center'>How do I open an account with Bankiti?</div> <br />
         <hr /><br />
         
@@ -227,7 +229,7 @@ const Home = () => {
          </div><br />
          
 
-         <div className='border h-70 w-130'><br />
+         <div className='border h-85 w-95'><br />
           <div className='flex items-center justify-center'>
           <p>What documents do I need to provide to apply for a loan?  </p></div><br />
           <hr /><br />
@@ -239,7 +241,7 @@ const Home = () => {
 
 
       <div className='flex flex-col'>
-        <div className='border h-70 w-130'><br />
+        <div className='border h-73 w-95'><br />
           <div className='flex items-center justify-center'>
           <p>How can I access my account online? </p></div><br />
            <hr /><br />
@@ -249,7 +251,7 @@ const Home = () => {
            </div>
         </div><br />
 
-        <div className='border h-70 w-130'><br />
+        <div className='border h-80 w-95'><br />
           <div className='flex items-center justify-center'>
           <p>Are my transactions and personal information secure?</p></div><br />
           <hr /><br />
@@ -261,12 +263,12 @@ const Home = () => {
       </div><br />
 
 
-      <div className='flex items-center justify-center mt-30'>
+      <div className='flex items-center ml-30 mt-30'>
         <p>BANKITI</p>
       </div>
      <hr /><br />
 
-     <div className='flex items-center justify-center gap-5'>
+     <div className='flex items-center  gap-5'>
       <p className='flex'><FaEnvelope/>bankiti@gmail.com</p>
       <p className='flex'><FaPhone/>+233 xxxxxxxxx</p>
       <p className='flex'><FaMapMarkerAlt/>Kumasi,Ghana</p>
