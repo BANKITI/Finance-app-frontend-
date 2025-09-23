@@ -21,7 +21,7 @@ const Navbar = () => {
             <NavLink to='/rate'><li>Rates</li></NavLink>
             
         </ul>
-        <button onClick={() => navigate('/signup', {replace: true})}>Sign up</button>
+        <button onClick={() => navigate('/signup', {replace: true})}>Signup</button>
   
          
         
