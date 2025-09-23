@@ -67,7 +67,7 @@ const Signup = () => {
     <div className='m-5 p-7 flex gap-15 justify-center items-center'>
       <div>
        <form onSubmit={handleSubmit}>
-          <h2 >Become a member and enjoy exclusive premium advantages</h2><br />
+          <h2 >Become a member and enjoy exclusive premium advantages.</h2><br />
           <hr className="border border-black" /><br />
 
 

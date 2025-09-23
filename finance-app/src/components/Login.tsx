@@ -1,10 +1,11 @@
 
-
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 
 
 
 const Login = () => {
+    const navigate = useNavigate()
    
   const [formData, setFormData] = useState({
     email: '',    
@@ -45,8 +46,8 @@ const Login = () => {
   return (
     <div >
 
-      <div className="flex items-center justify-center gap-10 flex-row-reverse ml-10 mt-10">
-      <div className="border rounded-2xl h-120 w-130">
+      <div className="m-5 p-7 flex gap-15 justify-center items-center ">
+      <div className=" ">
         
         
       
@@ -60,35 +61,38 @@ const Login = () => {
             
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium ml-10">Email Address</label>
+            <label className="block mb-1 font-medium">Email Address</label>
             <input 
               type="text" 
               name="email" 
               value={formData.email}
               onChange={handleChange}
-              className="w-100 px-4 py-2 ml-10 focus:ring-blue-400 focus:outline-none text-black focus: ring-2"
+              className="w-full px-4 py-2 border p-4  focus:ring-blue-400
+               focus:outline-none text-black focus:ring-2"
             />
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium ml-10">Password</label>
+            <label className="block mb-1 font-medium ">Password</label>
             <input 
               type="password" 
               name="password" 
               value={formData.password}
               onChange={handleChange}
-              className="w-100 px-4 py-2 focus:ring-blue-400 focus:outline-none text-black focus: ring-2 ml-10"
+              className="w-full px-4 py-2 border p-4  focus:ring-blue-400
+               focus:outline-none text-black focus:ring-2"
             />
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium ml-10">Confirm Password</label>
+            <label className="block mb-1 font-medium ">Confirm Password</label>
             <input 
               type="password" 
               name="confirmPassword" 
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-100 px-4 py-2 ml-10 focus:ring-blue-400 focus:outline-none text-black focus: ring-2"
+              className="w-full px-4 py-2 border p-4  focus:ring-blue-400
+               focus:outline-none text-black focus:ring-2"
             />
           </div>
 
@@ -98,7 +102,7 @@ const Login = () => {
 
           <button 
             type="submit" 
-            className="w-100 bg-[#CAFE33] ml-10 text-black font-semibold py-2 px-4 rounded-xl "
+            className="w-full bg-[#CAFE33]  text-black font-semibold py-2 px-4 rounded-xl  "
           >
             Login account
             
@@ -111,7 +115,8 @@ const Login = () => {
          
 
         </form>
-
+        
+        Don`t have an account? <div className='Log-button'><button onClick={() => navigate('/signup',{replace: true})}> <b>Login</b> </button></div>
 
        
       </div>
