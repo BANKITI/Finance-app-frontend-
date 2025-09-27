@@ -42,7 +42,7 @@ const Home = () => {
        </div><br />
         <p className=' text-[rgba(139,188,0,1)] lg:flex lg:items-center lg:justify-center'>OUR SERVICES</p> <br />
 
-       <div className='flex flex-col'>
+       <div className='flex flex-col lg:flex lg:flex-row lg:gap-20'>
           <div className="border rounded-2xl w-70 h-70 lg:h-90
           "> <br />
             <div className='flex items-center justify-center'>
@@ -94,7 +94,7 @@ const Home = () => {
 
             </div>
 
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center '>
               <p>businesses for various purposes.</p>
 
             </div>
@@ -106,7 +106,7 @@ const Home = () => {
 
          </div> <br />
 
-         <div className='border rounded-2xl w-70 h-70 lg:200'><br />
+         <div className='border rounded-2xl w-70 h-70  lg:h-94'><br />
            <div className='flex items-center justify-center'>
           <img src="song.png" alt="" />
            </div> <br />
@@ -135,18 +135,20 @@ const Home = () => {
        </div><br /><br />
 
        <div className='  text-[rgba(139,188,0,1)]'>
-          <p><b>How we work?</b></p>
+          <p className='lg:flex lg:items-center lg:justify-center
+          '><b>How we work?</b></p>
        </div> <br />
 
        <div>
-          <p className=' text-[rgba(139,188,0,1)] '>Application</p>
+          <p className=' text-[rgba(139,188,0,1)] lg:ml-45
+          '>Application</p>
        </div>
 
       
 
        
 
-       <div className='flex flex-col-reverse'>
+       <div className='flex flex-col-reverse lg:flex lg:flex-row-reverse'>
        <div>
          <div>
             <img src="/card.png" alt="" />
@@ -163,28 +165,35 @@ const Home = () => {
        
        
     <div className=''>
-       <div>
-       <div className=' text-[rgba(139,188,0,1)] '>
+       
+       <div className=' text-[rgba(139,188,0,1)] lg:ml-45'>
         <p> <b>Documentation and Verification</b></p>
        </div>
-
+      <div >
+        <div className='lg:flex lg:flex-row lg:ml-45'>
        <div>
         <p>The Bankiti request supporting documents <br /> from  the borrower,such as identification <br /> proof,statement document, and collateral <br />details(if applicable).Bankiti  verifies the <br />information  provided to access the borrowers`<br /> creditworthiness and elegibility for the loan.</p>
 
         <div>
         <img src="/photo.png" alt="" />
+        </div>
 
        </div>
+       
         <div>
-        <p  className=' text-[rgba(139,188,0,1)] '><b>Credit Asessment</b></p>
+
+     
+         <div className='lg:flex lg:flex-col lg:ml-30 '> 
+        <p  className=' text-[rgba(139,188,0,1)] '><b>Credit Asessment <br /></b></p>
        </div>
 
        
-       <div className=''>
+       <div className='lg:flex lg:flex-row lg:ml-28'>
          <p>Bankiti conducts a credit assessment to <br />evaluate the borrower`s creditworthiness <br />
        and ability to repay the loan.  This process <br />
           involves analyzing the borrower`s credit <br />history,income  stability,debt-to-income ratio,<br /> and other factors</p>
          
+         </div>
        </div>
 
        </div><br />
@@ -199,9 +208,9 @@ const Home = () => {
        </div>
 
        
-      
+        <div className='lg:flex lg:flex-col items-end '>
         <div className=''>
-              <p className='text-[rgba(139,188,0,1)]'>Loan Approval</p>
+              <p className='text-[rgba(139,188,0,1)] lg: mr-78'>Loan Approval</p>
            </div>
 
         
@@ -212,19 +221,22 @@ const Home = () => {
            <p>If the borrower meets Bankiti`s lending criteria <br /> and passes the  credit  assessmnent the loan <br />
             is approved.  Bankiti determines the loan amount,<br />the interest rate,the repayment term, and any <br /> associated fees.</p></div>
          </div> <br />
-         
-         
-         <div className=' text-[rgba(139,188,0,1)]'>
+        
+        
+        
+        </div> 
+         <div className=' text-[rgba(139,188,0,1)] lg:flex lg:items-center lg:justify-center'>
            <p>Frequently Asked Questions</p>
            
          </div>
-
-         <div className=' '>
+         <div className=' lg:flex lg:items-center lg:justify-center
+         '>
           Do you have any questions contact our team <br /> via support@gmail.com
          </div><br />
-
+      
         <div className='flex flex-col'>
-         <div className='border h-70 w-95'> <br />
+      <div className='lg:flex lg:gap-4 lg:items-center lg:justify-center'>
+         <div className='border h-70 w-95 lg:h-130'> <br />
          <div className='flex items-center justify-center'>How do I open an account with Bankiti?</div> <br />
         <hr /><br />
         
@@ -232,19 +244,22 @@ const Home = () => {
          </div><br />
          
 
-         <div className='border h-85 w-95'><br />
+         <div className='border h-85 w-95 lg:h-130'><br />
           <div className='flex items-center justify-center'>
           <p>What documents do I need to provide to apply for a loan?  </p></div><br />
           <hr /><br />
           <div className='ml-5'>
-          <p>The documents required for a loan application may vary depending on the type of loan you are applying for.Generally,you will need to provide identification documents (such as Ghana Card,passport or driver`s license),proof of income (such as pay stubs or tax returns) and  information about the collateral(if applicable).Our loan offices will guide you through the specific requirements during the application process. </p></div> 
+          <p>The documents required for a loan application may vary depending on the type of loan you are applying for.Generally,you will need to provide identification documents (such as Ghana Card,passport or driver`s license),proof of income (such as pay stubs or tax returns) and  information about the collateral(if applicable).Our loan offices will guide you through the specific requirements during the application process.  </p></div> 
           </div>
-          </div><br />
+          </div>
+          </div>
+          <br />
         
 
 
       <div className='flex flex-col'>
-        <div className='border h-73 w-95'><br />
+        <div className='lg:flex lg:gap-4 lg:items-center lg:justify-center'>
+        <div className='border h-73 w-95 lg:h-120'><br />
           <div className='flex items-center justify-center'>
           <p>How can I access my account online? </p></div><br />
            <hr /><br />
@@ -254,7 +269,7 @@ const Home = () => {
            </div>
         </div><br />
 
-        <div className='border h-80 w-95'><br />
+        <div className='border h-80 w-95 lg:h-120'><br />
           <div className='flex items-center justify-center'>
           <p>Are my transactions and personal information secure?</p></div><br />
           <hr /><br />
@@ -263,15 +278,17 @@ const Home = () => {
             <p>At Bankiti,we prioritize the security of your transaction and personal informtion.We employ industry-leading encryption and multi-factor authentication to ensure that your data is protected.Additionally,we regularly update our security measures to stay ahead of emerging threats.You can think in confidence knowing that we have robust security systems in place.</p>
           </div>
         </div>
+        </div>
       </div><br />
 
 
-      <div className='flex items-center ml-30 mt-30'>
-        <p>BANKITI</p>
+      <div className='flex items-center ml-30 mt-30 lg:flex lg:items-center lg:justify-center'>
+        <div className=''>
+        <p><img src="./Logo.png" alt="" width={100}/></p></div>
       </div>
      <hr /><br />
 
-     <div className='flex items-center  gap-0.5'>
+     <div className='flex items-center  gap-0.5 lg:flex lg:items-center lg:justify-center lg:gap-3'>
       <p className='flex'><FaEnvelope/>bankiti@gmail.com</p>
       <p className='flex'><FaPhone/>+233 xxxxxxxxx </p>
       <p className='flex'><FaMapMarkerAlt/>Kumasi,Ghana</p>

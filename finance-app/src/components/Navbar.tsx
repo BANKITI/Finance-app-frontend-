@@ -6,11 +6,13 @@ const Navbar = () => {
 
   const navigate = useNavigate()
   return (
+    
     <div className=' lg:text-20px'>
+      
     <div className='navbar text-[14px]'>
       <div>
 
-        BANKITI
+        <img src="./Logo.png" alt="" width={72}/>
 
       </div>
         <ul>
