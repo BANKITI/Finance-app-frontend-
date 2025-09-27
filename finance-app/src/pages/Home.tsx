@@ -3,14 +3,15 @@ import { FaEnvelope,FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <div className='m-2 '>
-      <div className='flex flex-col'>
-       <p> <b> Welcome to BANKITI <br />
+    <div className='m-2 text-[14px] lg:m-5 lg:p-7 lg:text-[20px] '>
+      <div className='flex flex-col lg:flex lg:flex-row lg:gap-14'>
+        
+       <p className='lg:flex lg:flex-col  lg:ml-70'> <b> Welcome to BANKITI <br />
         Empowering Your <br />  <div className='text-[rgba(139,188,0,1)]'>Financial Journey</div> <br /> </b>
           
        <br />
         At Bankiti,our mission is to provide comprehensive <br />banking solutions  that empower individuals and <br />businesses  to achieve their financial goals.We <br /> are commited to delivering personalized  and <br /> innovative services that  prioritize our customers`<br /> needs. 
-        <p><br /><div className="account"><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
+        <p><br /><div className="account lg:w-100 "><button onClick={() => navigate('/signup',{replace: true})}>Open Account</button></div> </p><br />
        </p>
        
        <div>
@@ -19,8 +20,9 @@ const Home = () => {
 
       </div><br />
 
-      <div className='flex flex-col'>
-        <p> <b>Quick and Easy <br /> Loans for Your <br /> <div className='text-[rgba(139,188,0,1)]'>Financial Needs </div> </b> <br /> 
+      <div className='flex flex-col lg:flex lg:flex-row lg:gap-14'>
+        <p className='lg:flex lg:flex-col lg:ml-70
+        '> <b>Quick and Easy <br /> Loans for Your <br /> <div className='text-[rgba(139,188,0,1)]'>Financial Needs </div> </b> <br /> 
         Our loan services offer a hassle-free and <br /> streamlined borrowing experience,providing <br />you with  the funds you need in a timely <br />  manner to meet your financial requirements.
 
         <div className="count "><button onClick={() => navigate('/signup',{replace: true})}>Get started</button></div> 
@@ -38,17 +40,17 @@ const Home = () => {
        
 
        </div><br />
-        <p className=' text-[rgba(139,188,0,1)]'>OUR SERVICES</p> <br />
+        <p className=' text-[rgba(139,188,0,1)] lg:flex lg:items-center lg:justify-center'>OUR SERVICES</p> <br />
 
        <div className='flex flex-col'>
-          <div className="border rounded-2xl w-70 h-70
+          <div className="border rounded-2xl w-70 h-70 lg:h-90
           "> <br />
             <div className='flex items-center justify-center'>
            <img src="/Vector.png" alt="" />
            
         </div> <br />
 
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center '>
            <p><b>Personal loan</b></p>
          </div>
 
@@ -74,7 +76,7 @@ const Home = () => {
          
         </div><br />
         
-         <div className='border rounded-2xl h-70 w-70'><br />
+         <div className='border rounded-2xl h-70 w-70 lg:h-92 '><br />
             <div className='flex items-center justify-center'>
               <img src="/group.png" alt="" />
             </div><br />
@@ -87,12 +89,13 @@ const Home = () => {
              </div>
 
             <div className='flex items-center justify-center'>
-              <p>financial assistance to businesses</p>
+              <p>financial assistance to  </p>
+             
 
             </div>
 
             <div className='flex items-center justify-center'>
-              <p>for various purposes.</p>
+              <p>businesses for various purposes.</p>
 
             </div>
 
@@ -103,7 +106,7 @@ const Home = () => {
 
          </div> <br />
 
-         <div className='border rounded-2xl w-70 h-70'><br />
+         <div className='border rounded-2xl w-70 h-70 lg:200'><br />
            <div className='flex items-center justify-center'>
           <img src="song.png" alt="" />
            </div> <br />

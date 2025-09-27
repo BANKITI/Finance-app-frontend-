@@ -6,8 +6,8 @@ const Navbar = () => {
 
   const navigate = useNavigate()
   return (
-    
-    <div className='navbar'>
+    <div className=' lg:text-20px'>
+    <div className='navbar text-[14px]'>
       <div>
 
         BANKITI
@@ -25,7 +25,7 @@ const Navbar = () => {
   
          
         
-        
+     </div>   
     </div>
   ) 
 }
