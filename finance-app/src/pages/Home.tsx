@@ -81,7 +81,7 @@ const Home = () => {
               <img src="/group.png" alt="" />
             </div><br />
 
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center '>
               <p><b>Business loan</b></p>
             </div>
              <div className='flex items-center justify-center'>
@@ -89,16 +89,8 @@ const Home = () => {
              </div>
 
             <div className='flex items-center justify-center'>
-              <p>financial assistance to  </p>
-             
-
+              <p>financial assistance to  businesses for various purposes</p>
             </div>
-
-            <div className='flex items-center justify-center '>
-              <p>businesses for various purposes.</p>
-
-            </div>
-
             <div className="box">
          <div className='
          select'><button onClick={() => navigate('/signup',{replace: true})}>Apply now</button></div> 
