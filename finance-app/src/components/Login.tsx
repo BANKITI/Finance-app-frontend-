@@ -46,20 +46,20 @@ const Login = () => {
   return (
     <div >
 
-      <div className="m-5 p-7 flex gap-15 justify-center items-center ">
+      <div className="m-5 p-7 flex gap-15 justify-center items-center lg:ml-135 ">
       <div className=" ">
         
         
       
-
+       <div className=''>
         <form onSubmit={handleSubmit}>
-          <h2 className="text-2xl  mb-6 text-center"> <div><b>Account Login</b></div>
+          <h2 className="text-2xl  mb-6 text-center"> <div><b>Account Login</b></div></h2>
+            
 
-             <div>If you are already a member you can login with your email address and password.</div><br />
+             <div>If you are already a member you can login with <br /> your email address and password.</div><br />
              <hr className="border border-black" /><br />
          
-          </h2>
-            
+          
 
           <div className="mb-4">
             <label className="block mb-1 font-medium">Email Address</label>
@@ -109,7 +109,7 @@ const Login = () => {
             
           </button>
 
-          
+           Don`t have an account? <div className='Log-button'><button onClick={() => navigate('/signup',{replace: true})}> <b>Create one</b> </button></div>
 
           
           
@@ -117,9 +117,9 @@ const Login = () => {
 
         </form>
         
-        Don`t have an account? <div className='Log-button'><button onClick={() => navigate('/signup',{replace: true})}> <b>Create one</b> </button></div>
-
        
+
+       </div>
       </div>
 
      </div>

@@ -9,6 +9,8 @@ import Rate from './pages/Rate';
 import Login from './components/Login';
 
 import ContactLayout from './layout/ContactLayout';
+import Verification from './pages/Verification';
+import Successful from './pages/Successful';
 
 
 
@@ -22,11 +24,11 @@ const App = () => {
         <Route index element={<Home/>}/>
         
         <Route path='/login' element={<Login/>}/>
-        
+        <Route path='/verification' element={<Verification/>}/>
         <Route path='/borrow' element={<Borrow/>}/>
         <Route path='/lend' element={<Lend/>}/>
         <Route path='/rate' element={<Rate/>}/>
-        
+        <Route path='/successful' element={<Successful/>}/>
         <Route path='/signup' element={<ContactLayout/>}>
 
            
