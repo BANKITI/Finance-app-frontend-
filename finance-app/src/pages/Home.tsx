@@ -164,7 +164,7 @@ const Home = () => {
       <div >
         <div className='lg:flex lg:flex-row lg:ml-45'>
        <div>
-        <p>The Bankiti request supporting documents <br /> from  the borrower,such as identification <br /> proof,statement document, and collateral <br />details(if applicable).Bankiti  verifies the <br />information  provided to access the borrowers`<br /> creditworthiness and elegibility for the loan.</p>
+        <p> Bankiti request supporting documents <br /> from  the borrower,such as identification <br /> proof,statement document, and collateral <br />details(if applicable).Bankiti  verifies the <br />information  provided to access the borrowers`<br /> creditworthiness and elegibility for the loan.</p>
 
         <div>
         <img src="/photo.png" alt="" />
@@ -228,7 +228,7 @@ const Home = () => {
       
         <div className='flex flex-col'>
       <div className='lg:flex lg:gap-4 lg:items-center lg:justify-center'>
-         <div className='border h-70 w-95 lg:h-130'> <br />
+         <div className='border h-60 w-85 lg:w-95 lg:h-130'> <br />
          <div className='flex items-center justify-center'>How do I open an account with Bankiti?</div> <br />
         <hr /><br />
         
@@ -236,7 +236,7 @@ const Home = () => {
          </div><br />
          
 
-         <div className='border h-85 w-95 lg:h-130'><br />
+         <div className='border h-80 w-85 lg:w-95 lg:h-130'><br />
           <div className='flex items-center justify-center'>
           <p>What documents do I need to provide to apply for a loan?  </p></div><br />
           <hr /><br />
@@ -251,7 +251,7 @@ const Home = () => {
 
       <div className='flex flex-col'>
         <div className='lg:flex lg:gap-4 lg:items-center lg:justify-center'>
-        <div className='border h-73 w-95 lg:h-120'><br />
+        <div className='border h-65 w-85 lg:w-95 lg:h-120'><br />
           <div className='flex items-center justify-center'>
           <p>How can I access my account online? </p></div><br />
            <hr /><br />
@@ -261,7 +261,7 @@ const Home = () => {
            </div>
         </div><br />
 
-        <div className='border h-80 w-95 lg:h-120'><br />
+        <div className='border h-70 w-85 lg:w-95 lg:h-120'><br />
           <div className='flex items-center justify-center'>
           <p>Are my transactions and personal information secure?</p></div><br />
           <hr /><br />

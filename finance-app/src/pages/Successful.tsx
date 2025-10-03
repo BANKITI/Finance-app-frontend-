@@ -2,7 +2,7 @@
 
 const Successful = () => {
   return (
-    <div className="flex  items-center flex-col justify-center min-h-screen px-4 lg:ml-135 bg-white">
+    <div className="flex  items-center flex-col justify-center min-h-screen px-4 lg:ml-135 bg-white ml-30">
         <div><img src="./success.png" alt="" /></div><br />
 
         <div><br />

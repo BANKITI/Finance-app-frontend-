@@ -43,7 +43,7 @@ const Verification: React.FC = () => {
       <h2 className="text-2xl font-bold mb-2 text-center">OTP Verification</h2>
       <p className="text-gray-600 mb-6 text-center">
         Enter the OTP sent to{" "}
-        <span className="font-semibold">your mobile number</span>
+        <span className="font-semibold">your email</span>
       </p>
 
       {/* OTP Inputs */}
@@ -64,12 +64,14 @@ const Verification: React.FC = () => {
       {error && <p className="text-red-500 mb-3">{error}</p>}
 
       {/* Verify Button */}
+      <div className="Button">
       <button
         onClick={handleVerify}
-        className="w-full max-w-xs bg-lime-400 text-black font-semibold py-3 rounded-lg shadow hover:bg-lime-500 transition"
+        className="w-full max-w-xs  text-black font-semibold py-3 rounded-lg shadow hover:bg-lime-500 transition"
       >
         Verify & Proceed
       </button>
+      </div>
 
       {/* Resend Section */}
       <p className="mt-4 text-gray-500">

@@ -163,24 +163,28 @@ const Signup = () => {
           </div>
 
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
+           
+           <div className="Register">
           {/* Register button */}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-xl"
+            className="w-full text-black  font-semibold py-2 px-4 rounded-xl"
           >
             Register
           </button>
+          </div>
         </form>
 
-        <p className="mt-4">
+        <p className="mt-4 flex">
           Already have an account?
+          <div className="Login">
           <button
             onClick={() => navigate("/login", { replace: true })}
-            className="ml-2 text-blue-600 font-semibold"
+            className="ml-2  font-semibold text-[rgba(139,188,0,1)]"
           >
             Login
           </button>
+          </div>
         </p>
       </div>
     </div>
