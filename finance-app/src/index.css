@@ -12,17 +12,18 @@ a{
 
 .navbar{
   display: flex;
-  justify-content: center;
- 
+  justify-content: space-around;
+  align-items: center;
+   
   background-color: rgba(255,255,255,1);
-  height: 71px;
+  
   
   
 }
 
 .navbar ul{
   display: flex;
-  gap: 22px;
+  gap: 10px;
 }
 
 

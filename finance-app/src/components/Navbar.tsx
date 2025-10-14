@@ -24,7 +24,7 @@ const Navbar = () => {
             <NavLink to='/lend'><li>Lend</li></NavLink>
             <NavLink to='/rate'><li>Rates & Fees</li></NavLink>
              <NavLink to='/support'><li>Support</li></NavLink>
-             <div className='flex gap-7 ml-20 '>
+             <div className='flex gap-7 ml-1.5 '>
               <NavLink to='/login'><li>Login</li></NavLink>
            
 
