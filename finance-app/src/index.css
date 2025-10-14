@@ -12,16 +12,17 @@ a{
 
 .navbar{
   display: flex;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.2);
-  gap: 15px;
-  height: 30px;
-  align-items: center;
+  justify-content: center;
+ 
+  background-color: rgba(255,255,255,1);
+  height: 71px;
+  
+  
 }
 
 .navbar ul{
   display: flex;
-  gap: 15px;
+  gap: 22px;
 }
 
 
@@ -30,13 +31,14 @@ a.active{
 }
 
 .navbar button{
-  background: #CAFE33;
-  color:#000000;
+  background: rgba(226,104,4,1) ;
+  color:#ffff;
   outline: 0;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
-  width: 60px;
-  height: 30px;
+  width: 85px;
+  height: 35px;
+  
 }
 
 .container{

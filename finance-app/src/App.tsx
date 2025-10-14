@@ -6,11 +6,14 @@ import Notfound from './components/Notfound';
 import Borrow from './pages/Borrow';
 import Lend from './pages/Lend';
 import Rate from './pages/Rate';
-import Login from './components/Login';
+import Login from './pages/Login';
 
 import ContactLayout from './layout/ContactLayout';
-import Verification from './pages/Verification';
-import Successful from './pages/Successful';
+
+
+
+import How from './pages/How';
+import Support from './pages/Support';
 
 
 
@@ -22,14 +25,15 @@ const App = () => {
     createRoutesFromElements(
       <Route path='/' element={<RootLayout/>}>
         <Route index element={<Home/>}/>
-        
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/verification' element={<Verification/>}/>
+        <Route path='/how' element={<How/>}/>
+       
+       
         <Route path='/borrow' element={<Borrow/>}/>
         <Route path='/lend' element={<Lend/>}/>
         <Route path='/rate' element={<Rate/>}/>
-        <Route path='/successful' element={<Successful/>}/>
-        <Route path='/signup' element={<ContactLayout/>}>
+        <Route path='/support' element={<Support/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/apply' element={<ContactLayout/>}>
 
            
       </Route>

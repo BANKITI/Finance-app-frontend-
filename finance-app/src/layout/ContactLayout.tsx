@@ -1,5 +1,5 @@
 
-import Signup from "../pages/Signup"
+import Signup from "../pages/Apply"
 import { Outlet } from 'react-router-dom'
 
 const ContactLayout = () => {
