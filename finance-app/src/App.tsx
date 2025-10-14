@@ -1,61 +1,33 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-import Home from './pages/Home';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider,  } from "react-router-dom";
-import RootLayout from './layout/RootLayout';
-import Notfound from './components/Notfound';
-import Borrow from './pages/Borrow';
-import Lend from './pages/Lend';
-import Rate from './pages/Rate';
-import Login from './pages/Login';
+import Home from "./pages/Home";
+import HowItWorks from "./pages/How";
+import Borrow from "./pages/Borrow";
+import Lend from "./pages/Lend";
+import Rates from "./pages/Rate";
+import Support from "./pages/Support";
+import Login from "./pages/Login";
+import Apply from "./pages/Apply";
 
-import ContactLayout from './layout/ContactLayout';
-
-
-
-import How from './pages/How';
-import Support from './pages/Support';
-
-
-
-
-
-const App = () => {
-
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<RootLayout/>}>
-        <Route index element={<Home/>}/>
-        <Route path='/how' element={<How/>}/>
-       
-       
-        <Route path='/borrow' element={<Borrow/>}/>
-        <Route path='/lend' element={<Lend/>}/>
-        <Route path='/rate' element={<Rate/>}/>
-        <Route path='/support' element={<Support/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/apply' element={<ContactLayout/>}>
-
-           
-      </Route>
-      <Route path='*' element={<Notfound/>}/>
-     
-
-      
-      </Route>
-    )
-  )
+function App() {
   return (
-    
-   <RouterProvider router={router}/>
-   
-   
-    
-
-
-      
-
-
-  )
+    <Router>
+      <Navbar />
+      <div className="pt-20"> {/* space for fixed navbar */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/borrow" element={<Borrow />} />
+          <Route path="/lend" element={<Lend />} />
+          <Route path="/rates" element={<Rates />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/apply" element={<Apply />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
