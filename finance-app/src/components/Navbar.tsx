@@ -1,38 +1,81 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "How It Works", path: "/how-it-works" },
+    { name: "Borrow", path: "/borrow" },
+    { name: "Lend", path: "/lend" },
+    { name: "Rates & Fees", path: "/rates" },
+    { name: "Support", path: "/support" },
+  ];
+
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="flex items-center justify-between px-6 py-4">
+    <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+      <div className="flex items-center justify-between px-6 py-4 md:px-12">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="bg-purple-700 text-white font-bold px-2 py-1 rounded">B</div>
-          <span className="text-purple-700 font-bold text-lg">BANKITI</span>
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
+            className="bg-purple-700 text-white font-bold px-2 py-1 rounded"
+          >
+            B
+          </motion.div>
+          <span className="text-purple-700 font-extrabold text-xl tracking-wide">BANKITI</span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-purple-700">Home</Link>
-          <Link to="/how-it-works" className="text-gray-700 hover:text-purple-700">How It Works</Link>
-          <Link to="/borrow" className="text-gray-700 hover:text-purple-700">Borrow</Link>
-          <Link to="/lend" className="text-gray-700 hover:text-purple-700">Lend</Link>
-          <Link to="/rates" className="text-gray-700 hover:text-purple-700">Rates & Fees</Link>
-          <Link to="/support" className="text-gray-700 hover:text-purple-700">Support</Link>
+          {navLinks.map((link) => (
+            <motion.div
+              key={link.path}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to={link.path}
+                className={`relative text-gray-700 hover:text-purple-700 transition font-medium ${
+                  location.pathname === link.path ? "text-purple-700" : ""
+                }`}
+              >
+                {link.name}
+                {location.pathname === link.path && (
+                  <motion.span
+                    layoutId="underline"
+                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-700"
+                  />
+                )}
+              </Link>
+            </motion.div>
+          ))}
 
           <div className="flex items-center space-x-4">
-            <Link to="/login" className="text-gray-700 hover:text-purple-700">Login</Link>
-            <Link
-              to="/apply"
-              className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition"
-            >
-              Apply Now
-            </Link>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                to="/login"
+                className="text-gray-700 hover:text-purple-700 transition font-medium"
+              >
+                Login
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                to="/apply"
+                className="bg-orange-600 text-white px-5 py-2 rounded-full hover:bg-orange-700 transition shadow-md"
+              >
+                Apply Now
+              </Link>
+            </motion.div>
           </div>
         </div>
 
@@ -41,34 +84,51 @@ const Navbar: React.FC = () => {
           onClick={toggleMenu}
           className="md:hidden text-purple-700 focus:outline-none"
         >
-          {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+          {isOpen ? <HiX size={30} /> : <HiMenu size={30} />}
         </button>
       </div>
 
-      {/* Mobile Menu (Slide Down) */}
-      <div
-        className={`md:hidden bg-white border-t transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-screen" : "max-h-0"
-        }`}
-      >
-        <div className="flex flex-col items-start space-y-4 px-6 py-4">
-          <Link onClick={toggleMenu} to="/" className="text-gray-700 hover:text-purple-700">Home</Link>
-          <Link onClick={toggleMenu} to="/how-it-works" className="text-gray-700 hover:text-purple-700">How It Works</Link>
-          <Link onClick={toggleMenu} to="/borrow" className="text-gray-700 hover:text-purple-700">Borrow</Link>
-          <Link onClick={toggleMenu} to="/lend" className="text-gray-700 hover:text-purple-700">Lend</Link>
-          <Link onClick={toggleMenu} to="/rates" className="text-gray-700 hover:text-purple-700">Rates & Fees</Link>
-          <Link onClick={toggleMenu} to="/support" className="text-gray-700 hover:text-purple-700">Support</Link>
-          <Link onClick={toggleMenu} to="/login" className="text-gray-700 hover:text-purple-700">Login</Link>
-
-          <Link
-            onClick={toggleMenu}
-            to="/apply"
-            className="bg-orange-600 text-white w-full text-center py-2 rounded hover:bg-orange-700 transition"
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white border-t shadow-sm"
           >
-            Apply Now
-          </Link>
-        </div>
-      </div>
+            <div className="flex flex-col space-y-4 px-6 py-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={toggleMenu}
+                  className={`text-gray-700 hover:text-purple-700 transition ${
+                    location.pathname === link.path ? "font-semibold text-purple-700" : ""
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link
+                onClick={toggleMenu}
+                to="/login"
+                className="text-gray-700 hover:text-purple-700 transition"
+              >
+                Login
+              </Link>
+              <Link
+                onClick={toggleMenu}
+                to="/apply"
+                className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
+              >
+                Apply Now
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

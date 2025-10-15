@@ -1,15 +1,15 @@
 
-import Signup from "../pages/Apply"
-import { Outlet } from 'react-router-dom'
+// import Signup from "../pages/Apply"
+// import { Outlet } from 'react-router-dom'
 
-const ContactLayout = () => {
-  return (
-    <div>
-        <Signup/>
+// const ContactLayout = () => {
+//   return (
+//     <div>
+//         <Signup/>
         
-        <Outlet/>
-    </div>
-  )
-}
+//         <Outlet/>
+//     </div>
+//   )
+// }
 
-export default ContactLayout
+// export default ContactLayout

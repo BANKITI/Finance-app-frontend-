@@ -9,12 +9,13 @@ import Rates from "./pages/Rate";
 import Support from "./pages/Support";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <div className="pt-20"> {/* space for fixed navbar */}
+      <div className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="/apply" element={<Apply />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
   );
 }
