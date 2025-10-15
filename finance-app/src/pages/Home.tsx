@@ -38,7 +38,7 @@ const HomePage = () => {
           </h1>
 
           <p className="text-gray-600 mt-4">
-            Connect with trusted lenders and borrowers on <b>BANKIT</b>.  
+            Connect with trusted lenders and borrowers on <b>BANKITI</b>.  
             Transparent rates, fast approvals, and secure transactions all in one platform.
           </p>
 
@@ -156,7 +156,7 @@ const HomePage = () => {
       {/* WHY CHOOSE BANKIT SECTION */}
       <section className="bg-gray-50 py-20 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
-          Why Choose BANKIT
+          Why Choose BANKITI
         </div>
 
         <h2 className="text-3xl font-bold">
@@ -219,7 +219,7 @@ const HomePage = () => {
           What Our <span className="text-purple-600">Users Say</span>
         </h2>
         <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
-          Join thousands of satisfied users who trust BANKIT for their lending and borrowing needs.
+          Join thousands of satisfied users who trust BANKITI for their lending and borrowing needs.
         </p>
 
         {/* Testimonial Cards */}
@@ -229,13 +229,13 @@ const HomePage = () => {
               name: "Sarah Johnson",
               role: "Small Business Owner",
               initials: "SJ",
-              text: `"BANKIT helped me secure funding for my business expansion in just 48 hours. The process was seamless and the rates were competitive. Highly recommended!"`,
+              text: `"BANKITI helped me secure funding for my business expansion in just 48 hours. The process was seamless and the rates were competitive. Highly recommended!"`,
             },
             {
               name: "Michael Chen",
               role: "Real Estate Investor",
               initials: "MC",
-              text: `"As a lender, I’ve found BANKIT to be transparent and reliable. The platform makes it easy to find quality borrowers and track my investments."`,
+              text: `"As a lender, I’ve found BANKITI to be transparent and reliable. The platform makes it easy to find quality borrowers and track my investments."`,
             },
             {
               name: "Emily Rodriguez",
