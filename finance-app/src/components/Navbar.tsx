@@ -27,11 +27,13 @@ const Navbar: React.FC = () => {
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
-            className="bg-purple-700 text-white font-bold px-2 py-1 rounded"
+            className="bg-teal-600 text-white font-bold px-2 py-1 rounded"
           >
             B
           </motion.div>
-          <span className="text-purple-700 font-extrabold text-xl tracking-wide">BANKITI</span>
+          <span className="text-teal-700 font-extrabold text-xl tracking-wide">
+            BANKITI
+          </span>
         </Link>
 
         {/* Desktop Menu */}
@@ -44,15 +46,15 @@ const Navbar: React.FC = () => {
             >
               <Link
                 to={link.path}
-                className={`relative text-gray-700 hover:text-purple-700 transition font-medium ${
-                  location.pathname === link.path ? "text-purple-700" : ""
+                className={`relative text-gray-700 hover:text-teal-700 transition font-medium ${
+                  location.pathname === link.path ? "text-teal-700" : ""
                 }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-700"
+                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-teal-700"
                   />
                 )}
               </Link>
@@ -63,7 +65,7 @@ const Navbar: React.FC = () => {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="/login"
-                className="text-gray-700 hover:text-purple-700 transition font-medium"
+                className="text-gray-700 hover:text-teal-700 transition font-medium"
               >
                 Login
               </Link>
@@ -82,7 +84,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-purple-700 focus:outline-none"
+          className="md:hidden text-teal-700 focus:outline-none"
         >
           {isOpen ? <HiX size={30} /> : <HiMenu size={30} />}
         </button>
@@ -104,8 +106,10 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   onClick={toggleMenu}
-                  className={`text-gray-700 hover:text-purple-700 transition ${
-                    location.pathname === link.path ? "font-semibold text-purple-700" : ""
+                  className={`text-gray-700 hover:text-teal-700 transition ${
+                    location.pathname === link.path
+                      ? "font-semibold text-teal-700"
+                      : ""
                   }`}
                 >
                   {link.name}
@@ -114,7 +118,7 @@ const Navbar: React.FC = () => {
               <Link
                 onClick={toggleMenu}
                 to="/login"
-                className="text-gray-700 hover:text-purple-700 transition"
+                className="text-gray-700 hover:text-teal-700 transition"
               >
                 Login
               </Link>

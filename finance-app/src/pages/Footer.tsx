@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaLocationDot, FaPhone, FaEnvelope, FaArrowUp } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  // Show scroll-to-top button after scrolling down a bit
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 200);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-white border-t border-gray-200 text-gray-700">
+    <footer className="bg-white border-t border-gray-200 text-gray-700 relative">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand Section */}
         <motion.div
@@ -13,10 +29,10 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="flex items-center mb-3">
-            <div className="bg-purple-600 text-white font-bold text-xl w-8 h-8 flex items-center justify-center rounded-md mr-2">
+            <div className="bg-teal-600 text-white font-bold text-xl w-8 h-8 flex items-center justify-center rounded-md mr-2">
               B
             </div>
-            <h2 className="font-semibold text-lg">BANKITI</h2>
+            <h2 className="font-semibold text-lg text-teal-700">BANKITI</h2>
           </div>
           <p className="text-sm text-gray-600 mb-4">
             Smart lending and borrowing made simple. Connecting borrowers and
@@ -33,27 +49,27 @@ const Footer = () => {
           <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/" className="hover:text-purple-600 transition">
+              <Link to="/" className="hover:text-teal-600 transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/how-it-works" className="hover:text-purple-600 transition">
+              <Link to="/how-it-works" className="hover:text-teal-600 transition">
                 How It Works
               </Link>
             </li>
             <li>
-              <Link to="/borrow" className="hover:text-purple-600 transition">
+              <Link to="/borrow" className="hover:text-teal-600 transition">
                 Borrow
               </Link>
             </li>
             <li>
-              <Link to="/lend" className="hover:text-purple-600 transition">
+              <Link to="/lend" className="hover:text-teal-600 transition">
                 Lend
               </Link>
             </li>
             <li>
-              <Link to="/rates" className="hover:text-purple-600 transition">
+              <Link to="/rates" className="hover:text-teal-600 transition">
                 Rates & Fees
               </Link>
             </li>
@@ -69,27 +85,27 @@ const Footer = () => {
           <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/support" className="hover:text-purple-600 transition">
+              <Link to="/support" className="hover:text-teal-600 transition">
                 Help Center
               </Link>
             </li>
             <li>
-              <Link to="/support" className="hover:text-purple-600 transition">
+              <Link to="/support" className="hover:text-teal-600 transition">
                 FAQs
               </Link>
             </li>
             <li>
-              <Link to="/support" className="hover:text-purple-600 transition">
+              <Link to="/support" className="hover:text-teal-600 transition">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link to="/support" className="hover:text-purple-600 transition">
+              <Link to="/privacy" className="hover:text-teal-600 transition">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/how-it-works" className="hover:text-purple-600 transition">
+              <Link to="/terms" className="hover:text-teal-600 transition">
                 Terms of Service
               </Link>
             </li>
@@ -105,15 +121,15 @@ const Footer = () => {
           <h3 className="font-semibold text-gray-900 mb-4">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
-              <FaLocationDot className="text-purple-600" />
-              <span>GHANA, KNUST</span>
+              <FaLocationDot className="text-teal-600" />
+              <span>Ghana, KNUST</span>
             </li>
             <li className="flex items-center gap-2">
-              <FaPhone className="text-purple-600" />
+              <FaPhone className="text-teal-600" />
               <span>+233 *********</span>
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-purple-600" />
+              <FaEnvelope className="text-teal-600" />
               <span>support@bankiti.com</span>
             </li>
           </ul>
@@ -123,10 +139,29 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 mt-6">
         <p className="text-center text-sm text-gray-500 py-4">
-          © {new Date().getFullYear()} BANKITI. All rights reserved. Licensed and
-          regulated financial platform.
+          © {new Date().getFullYear()}{" "}
+          <span className="text-teal-600 font-medium">BANKITI</span>. All rights
+          reserved.
         </p>
       </div>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScroll && (
+          <motion.button
+            key="scrollButton"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition"
+          >
+            <FaArrowUp size={18} />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

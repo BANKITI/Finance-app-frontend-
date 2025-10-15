@@ -12,7 +12,6 @@ import {
   FaUsers,
   FaBalanceScale,
   FaCheckCircle,
-  
   FaStar,
 } from "react-icons/fa";
 import { HiOutlineCalculator } from "react-icons/hi";
@@ -28,13 +27,13 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-sm bg-purple-100 text-purple-700 font-semibold inline-block px-3 py-1 rounded-full mb-4">
+          <div className="text-sm bg-blue-100 text-blue-700 font-semibold inline-block px-3 py-1 rounded-full mb-4">
             Fast & Secure Lending
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
             Smart Lending & Borrowing Made{" "}
-            <span className="text-purple-600">Simple</span>
+            <span className="text-blue-600">Simple</span>
           </h1>
 
           <p className="text-gray-600 mt-4">
@@ -51,7 +50,7 @@ const HomePage = () => {
             </Link>
             <Link
               to="/lend"
-              className="border border-purple-500 text-purple-600 hover:bg-purple-600 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+              className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
             >
               Lend & Earn
             </Link>
@@ -59,7 +58,7 @@ const HomePage = () => {
 
           <div className="flex items-center gap-6 mt-8 text-gray-600 text-sm">
             <div className="flex items-center gap-2">
-              <FaLock className="text-purple-600 text-lg" />
+              <FaLock className="text-blue-600 text-lg" />
               <span>256-bit</span>
             </div>
             <div className="flex items-center gap-2">
@@ -80,7 +79,6 @@ const HomePage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* 👉 Replace this with your image path */}
           <img
             src="/image.jpg"
             alt="Loan illustration"
@@ -91,12 +89,12 @@ const HomePage = () => {
 
       {/* LOAN CALCULATOR */}
       <section className="bg-white py-16 px-6 lg:px-20 text-center">
-        <div className="inline-flex items-center bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
+        <div className="inline-flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
           <HiOutlineCalculator className="mr-2" /> Loan Calculator
         </div>
 
         <h2 className="text-3xl font-bold">
-          Calculate Your <span className="text-purple-600">Loan</span>
+          Calculate Your <span className="text-blue-600">Loan</span>
         </h2>
         <p className="text-gray-500 mt-2">
           Get an instant estimate of your monthly payments and total loan cost
@@ -112,15 +110,15 @@ const HomePage = () => {
           <div className="bg-gray-50 p-6 rounded-2xl shadow-md w-full md:w-1/3 text-left">
             <h3 className="text-lg font-semibold mb-4">Loan Details</h3>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaDollarSign className="text-purple-600" />
+              <FaDollarSign className="text-blue-600" />
               Loan Amount: <b>$10,000</b>
             </p>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaCalendarAlt className="text-purple-600" />
+              <FaCalendarAlt className="text-blue-600" />
               Loan Term: <b>12 months</b>
             </p>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaPercent className="text-purple-600" />
+              <FaPercent className="text-blue-600" />
               Interest Rate: <b>8.5%</b>
             </p>
           </div>
@@ -129,15 +127,15 @@ const HomePage = () => {
           <div className="bg-gray-50 p-6 rounded-2xl shadow-md w-full md:w-1/3 text-left">
             <h3 className="text-lg font-semibold mb-4">Your Loan Summary</h3>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaWallet className="text-purple-600" />
+              <FaWallet className="text-blue-600" />
               Monthly Payment: <b>$872.20</b>
             </p>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaMoneyBillWave className="text-purple-600" />
+              <FaMoneyBillWave className="text-blue-600" />
               Total Payment: <b>$10,466.40</b>
             </p>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
-              <FaChartLine className="text-purple-600" />
+              <FaChartLine className="text-blue-600" />
               Total Interest: <b>$466.40</b>
             </p>
           </div>
@@ -146,7 +144,7 @@ const HomePage = () => {
         <div className="mt-10">
           <Link
             to="/apply"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300"
           >
             Apply for This Loan
           </Link>
@@ -160,13 +158,12 @@ const HomePage = () => {
         </div>
 
         <h2 className="text-3xl font-bold">
-          Secure, Fast & <span className="text-purple-600">Transparent</span>
+          Secure, Fast & <span className="text-blue-600">Transparent</span>
         </h2>
         <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
           We're committed to providing the best lending and borrowing experience with top-notch security and customer service.
         </p>
 
-        {/* Feature Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {[
             { icon: <FaLock />, title: "Bank-Level Security", text: "256-bit encryption protects all your transactions and personal data." },
@@ -181,29 +178,28 @@ const HomePage = () => {
               whileHover={{ scale: 1.05 }}
               className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all text-left"
             >
-              <div className="text-purple-600 text-3xl mb-4">{feature.icon}</div>
+              <div className="text-blue-600 text-3xl mb-4">{feature.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
               <p className="text-gray-500">{feature.text}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 text-center">
           <div>
-            <h3 className="text-3xl font-bold text-purple-600">$50M+</h3>
+            <h3 className="text-3xl font-bold text-blue-600">$50M+</h3>
             <p className="text-gray-500">Loans Funded</p>
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-purple-600">10K+</h3>
+            <h3 className="text-3xl font-bold text-blue-600">10K+</h3>
             <p className="text-gray-500">Active Users</p>
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-purple-600">98%</h3>
+            <h3 className="text-3xl font-bold text-blue-600">98%</h3>
             <p className="text-gray-500">Satisfaction Rate</p>
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-purple-600">4.8/5</h3>
+            <h3 className="text-3xl font-bold text-blue-600">4.8/5</h3>
             <p className="text-gray-500">Average Rating</p>
           </div>
         </div>
@@ -212,17 +208,16 @@ const HomePage = () => {
       {/* TESTIMONIALS SECTION */}
       <section className="bg-white py-20 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
-          <FaStar/> Testimonials
+          <FaStar /> Testimonials
         </div>
 
         <h2 className="text-3xl font-bold">
-          What Our <span className="text-purple-600">Users Say</span>
+          What Our <span className="text-blue-600">Users Say</span>
         </h2>
         <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
           Join thousands of satisfied users who trust BANKITI for their lending and borrowing needs.
         </p>
 
-        {/* Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {[
             {
@@ -256,7 +251,7 @@ const HomePage = () => {
               </div>
               <p className="text-gray-700 mb-4">{user.text}</p>
               <div className="flex items-center gap-3">
-                <div className="bg-purple-600 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center">
+                <div className="bg-blue-600 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center">
                   {user.initials}
                 </div>
                 <div>
