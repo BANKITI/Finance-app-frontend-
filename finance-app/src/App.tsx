@@ -10,7 +10,9 @@ import Support from "./pages/Support";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
 import Footer from "./pages/Footer";
-
+import Signup from "./pages/Signup";
+import Info from "./pages/Info";
+import Submit from "./pages/Submit";
 function App() {
   return (
     <Router>
@@ -24,6 +26,9 @@ function App() {
           <Route path="/rates" element={<Rates />} />
           <Route path="/support" element={<Support />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/info" element={<Info/>}/>
+          <Route path = "/submit" element={<Submit/>}/>
           <Route path="/apply" element={<Apply />} />
         </Routes>
       </div>

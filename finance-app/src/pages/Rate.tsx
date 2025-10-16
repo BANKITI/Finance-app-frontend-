@@ -1,6 +1,8 @@
+
+
 const Rate = () => {
   return (
-    <h1>Rate</h1>
+    <div>Rate</div>
   )
 }
 
