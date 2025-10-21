@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePassword = () => setShowPassword(!showPassword);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you can later add backend login verification logic
+    navigate("/"); // redirects to home page
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
@@ -32,7 +39,7 @@ const Login: React.FC = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <label className="block text-sm font-semibold mb-1">Email</label>
             <input

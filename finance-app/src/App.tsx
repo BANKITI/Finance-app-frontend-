@@ -13,6 +13,9 @@ import Footer from "./pages/Footer";
 import Signup from "./pages/Signup";
 import Info from "./pages/Info";
 import Submit from "./pages/Submit";
+import Account from "./pages/Account";
+import Verification from "./pages/Verification";
+import Application from "./pages/Application"
 function App() {
   return (
     <Router>
@@ -30,6 +33,9 @@ function App() {
           <Route path="/info" element={<Info/>}/>
           <Route path = "/submit" element={<Submit/>}/>
           <Route path="/apply" element={<Apply />} />
+          <Route path="/account" element={<Account/>}/>
+          <Route path="/verification" element={<Verification/>}/>
+          <Route path="/application" element={<Application/>}/>
         </Routes>
       </div>
       <Footer/>

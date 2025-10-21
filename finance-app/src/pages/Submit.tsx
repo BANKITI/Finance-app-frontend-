@@ -29,7 +29,7 @@ const Submit: React.FC = () => {
 
     // Simulate API submission delay
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/application");
     }, 2000);
   };
 

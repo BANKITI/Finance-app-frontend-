@@ -12,7 +12,7 @@ const Signup: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isLogin) navigate("/dashboard");
-    else navigate("/apply");
+    else navigate("/account");
   };
 
   return (
