@@ -8,6 +8,7 @@ import {
   FaHandshake,
 } from "react-icons/fa";
 import { BsShieldCheck } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -164,12 +165,12 @@ const How = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <a
-          href="/login"
+        <Link
+          to="/login"
           className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full shadow-md transition duration-300"
         >
           Get Started
-        </a>
+        </Link>
       </motion.div>
     </div>
   );
