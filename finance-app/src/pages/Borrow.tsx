@@ -103,13 +103,20 @@ const Borrow: React.FC = () => {
           ))}
         </div>
 
-        {/* Apply Button */}
-        <div className="text-center mt-10">
+        {/* Apply Buttons */}
+        <div className="text-center mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <Link
             to="/apply"
             className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-10 py-3 rounded-full shadow-md transition duration-300"
           >
             Apply Now
+          </Link>
+
+          <Link
+            to="/borrowdash"
+            className="inline-block bg-white border border-teal-600 text-teal-700 font-semibold px-10 py-3 rounded-full shadow-md hover:bg-teal-50 transition duration-300"
+          >
+            Go to Dashboard
           </Link>
         </div>
       </motion.section>

@@ -77,6 +77,7 @@ const Rate: React.FC = () => {
                   <li key={idx}>• {feature}</li>
                 ))}
               </ul>
+
               <Link
                 to="/apply"
                 className="block text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg transition"
@@ -85,6 +86,16 @@ const Rate: React.FC = () => {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* Go to Dashboard Button */}
+        <div className="text-center mt-10">
+          <Link
+            to="/borrower-dashboard"
+            className="inline-block bg-white border border-teal-600 text-teal-700 font-semibold px-10 py-3 rounded-full shadow-md hover:bg-teal-50 transition duration-300"
+          >
+            Go to Dashboard
+          </Link>
         </div>
       </section>
 

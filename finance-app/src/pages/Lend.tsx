@@ -153,7 +153,7 @@ const Lend: React.FC = () => {
                   {borrower.status}
                 </span>
                 <Link
-                  to="/dashboard"
+                  to="/lenderdash"
                   className="block mt-3 text-center bg-teal-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-teal-700 transition"
                 >
                   Fund this Loan

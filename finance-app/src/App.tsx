@@ -15,7 +15,11 @@ import Info from "./pages/Info";
 import Submit from "./pages/Submit";
 import Account from "./pages/Account";
 import Verification from "./pages/Verification";
-import Application from "./pages/Application"
+import Application from "./pages/Application";
+import Policy from "./pages/Policy";
+import Borrowdash from "./pages/Borrowdash";
+import Lenderdash from "./pages/Lenderdash";
+import Cardpayment from "./pages/CardPayment";
 function App() {
   return (
     <Router>
@@ -36,6 +40,10 @@ function App() {
           <Route path="/account" element={<Account/>}/>
           <Route path="/verification" element={<Verification/>}/>
           <Route path="/application" element={<Application/>}/>
+          <Route path="/policy" element={<Policy/>}/>
+          <Route path="/borrowdash" element={<Borrowdash/>}/>
+          <Route path="/lenderdash" element={<Lenderdash/>}/>
+          <Route path="/cardpayment" element={<Cardpayment/>}/>
         </Routes>
       </div>
       <Footer/>
