@@ -91,7 +91,7 @@ const Rate: React.FC = () => {
         {/* Go to Dashboard Button */}
         <div className="text-center mt-10">
           <Link
-            to="/borrower-dashboard"
+            to="/borrowdash"
             className="inline-block bg-white border border-teal-600 text-teal-700 font-semibold px-10 py-3 rounded-full shadow-md hover:bg-teal-50 transition duration-300"
           >
             Go to Dashboard
@@ -136,7 +136,7 @@ const Rate: React.FC = () => {
               <p className="text-sm text-gray-600 mb-4">{tier.returns}</p>
               <p className="text-sm text-gray-500 mb-6">{tier.desc}</p>
               <Link
-                to="/dashboard"
+                to="/lenderdash"
                 className="block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg transition"
               >
                 Start Lending

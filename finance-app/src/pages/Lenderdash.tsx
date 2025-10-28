@@ -5,9 +5,7 @@ import {
   FaMoneyBillWave,
   FaChartLine,
   FaRegCheckCircle,
-  // FaPlusCircle,
   FaArrowUp,
-  // FaArrowDown,
 } from "react-icons/fa";
 
 const Lenderdash: React.FC = () => {
@@ -21,12 +19,21 @@ const Lenderdash: React.FC = () => {
           </h1>
 
           <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition">
+            {/* ✅ Borrower Button -> Navigates to Borrower Dashboard */}
+            <Link
+              to="/borrowdash"
+              className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition"
+            >
               Borrower
-            </button>
-            <button className="px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-teal-700 transition">
+            </Link>
+
+            {/* ✅ Lender Button (Active) */}
+            <Link
+              to="/lenderdash"
+              className="px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-teal-700 transition"
+            >
               Lender
-            </button>
+            </Link>
           </div>
         </header>
 
@@ -92,7 +99,7 @@ const Lenderdash: React.FC = () => {
               </h4>
               <p className="text-2xl font-bold text-gray-900">$12,450</p>
               <Link
-                to="/paystack-form"
+                to="/cardpayment"
                 className="inline-block mt-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
               >
                 + Add Funds
@@ -119,7 +126,7 @@ const Lenderdash: React.FC = () => {
               Active Investments
             </h3>
             <Link
-              to="/borrower-dashboard"
+              to="/borrowerdash"
               className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow"
             >
               <FaChartLine /> Browse Opportunities
@@ -275,7 +282,7 @@ const NewOpportunity: React.FC<NewOpportunityProps> = ({
       </p>
     </div>
     <Link
-      to="/paystack-form"
+      to="/cardpayment"
       className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg transition"
     >
       Invest

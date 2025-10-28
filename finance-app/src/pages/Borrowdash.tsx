@@ -19,13 +19,21 @@ const Borrowdash: React.FC = () => {
             Borrower Dashboard
           </h1>
 
+          {/* NAV BUTTONS */}
           <div className="flex gap-3">
-            <button className="px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-teal-700 transition">
+            <Link
+              to="/borrowdash"
+              className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all duration-200"
+            >
               Borrower
-            </button>
-            <button className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition">
+            </Link>
+
+            <Link
+              to="/lenderdash"
+              className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all duration-200"
+            >
               Lender
-            </button>
+            </Link>
           </div>
         </header>
 
@@ -84,7 +92,7 @@ const Borrowdash: React.FC = () => {
               Active Loans
             </h3>
             <Link
-              to="/apply-loan"
+              to="/apply"
               className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow"
             >
               <FaPlusCircle /> Apply For New Loan
@@ -247,7 +255,7 @@ const PaymentRow: React.FC<PaymentRowProps> = ({ title, date, amount }) => (
     <div className="text-right">
       <p className="font-semibold text-gray-800">{amount}</p>
       <Link
-        to="/paystack-form"
+        to="/cardpayment"
         className="text-indigo-600 hover:underline text-sm font-medium"
       >
         Pay Now

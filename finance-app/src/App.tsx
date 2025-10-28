@@ -19,7 +19,8 @@ import Application from "./pages/Application";
 import Policy from "./pages/Policy";
 import Borrowdash from "./pages/Borrowdash";
 import Lenderdash from "./pages/Lenderdash";
-import Cardpayment from "./pages/CardPayment";
+import Cardpayment from "./pages/Cardpayment";
+import Mobilepayment from "./pages/Mobilepayment";
 function App() {
   return (
     <Router>
@@ -44,6 +45,8 @@ function App() {
           <Route path="/borrowdash" element={<Borrowdash/>}/>
           <Route path="/lenderdash" element={<Lenderdash/>}/>
           <Route path="/cardpayment" element={<Cardpayment/>}/>
+          <Route path="/mobilepayment"
+          element={<Mobilepayment/>}/>
         </Routes>
       </div>
       <Footer/>
