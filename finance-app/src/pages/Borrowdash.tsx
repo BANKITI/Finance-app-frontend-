@@ -227,9 +227,9 @@ const LoanCard: React.FC<LoanCardProps> = ({
       <span className="font-semibold text-gray-800">{payment}</span>
     </div>
     <div className="flex justify-between items-center">
-      <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 text-sm font-medium">
+      {/* <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 text-sm font-medium">
         View Details
-      </button>
+      </button> */}
       <Link
         to="/cardpayment"
         className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"
