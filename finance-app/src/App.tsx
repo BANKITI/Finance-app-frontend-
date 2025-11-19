@@ -24,7 +24,7 @@ import Mobilepayment from "./pages/Mobilepayment";
 import ID from "./pages/ID"
 import Up from "./pages/Up";
 import Load from "./pages/Load";
-import Button from "./pages/Button";
+
 function App() {
   return (
     <Router>
@@ -54,7 +54,7 @@ function App() {
           <Route path="/iD" element={<ID/>}/>
           <Route path="/up" element={<Up/>}/>
           <Route path="/load" element={<Load/>}/>
-          <Route path="/button" element={<Button/>}/>
+          
         </Routes>
       </div>
       <Footer/>
