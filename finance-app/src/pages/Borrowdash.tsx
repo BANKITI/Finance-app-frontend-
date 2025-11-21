@@ -19,22 +19,7 @@ const Borrowdash: React.FC = () => {
             Borrower Dashboard
           </h1>
 
-          {/* NAV BUTTONS */}
-          <div className="flex gap-3">
-            <Link
-              to="/borrowdash"
-              className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all duration-200"
-            >
-              Borrower
-            </Link>
-
-            <Link
-              to="/lenderdash"
-              className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all duration-200"
-            >
-              Lender
-            </Link>
-          </div>
+         
         </header>
 
         {/* OVERVIEW CARDS */}

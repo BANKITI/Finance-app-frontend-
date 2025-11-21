@@ -17,24 +17,6 @@ const Lenderdash: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
             Lender Dashboard
           </h1>
-
-          <div className="flex gap-3">
-            {/* ✅ Borrower Button -> Navigates to Borrower Dashboard */}
-            <Link
-              to="/borrowdash"
-              className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-100 transition"
-            >
-              Borrower
-            </Link>
-
-            {/* ✅ Lender Button (Active) */}
-            <Link
-              to="/lenderdash"
-              className="px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-teal-700 transition"
-            >
-              Lender
-            </Link>
-          </div>
         </header>
 
         {/* OVERVIEW CARDS */}
