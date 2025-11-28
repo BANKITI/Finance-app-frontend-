@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import {
   FaLock,
   FaBolt,
   FaChartLine,
+  FaTimes,
   FaDollarSign,
   FaCalendarAlt,
   FaPercent,
@@ -16,9 +18,83 @@ import {
 } from "react-icons/fa";
 import { HiOutlineCalculator } from "react-icons/hi";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  // --------------------------------------------------
+  // POPUP LOGIC (FINAL VERSION)
+  // 1. Show popup after 1 minute
+  // 2. Do NOT show again after reload
+  // 3. Show only once per browser
+  // --------------------------------------------------
+  useEffect(() => {
+    const hasShownPopup = localStorage.getItem("popupShown");
+
+    // If popup already seen before, do NOT show again
+    if (hasShownPopup) return;
+
+    // Show popup after 60 seconds
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      localStorage.setItem("popupShown", "true");
+    }, 60000); // 60000ms = 1 minute
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 text-gray-900 relative">
+
+      {/* --------------------------- POPUP OVERLAY --------------------------- */}
+      {showPopup && (
+        <div
+          className="fixed inset-0 
+          bg-gradient-to-br from-blue-200/40 via-white/60 to-blue-100/40 
+          backdrop-blur-sm 
+          flex items-center justify-center px-4 z-40"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition"
+            >
+              <FaTimes size={24} />
+            </button>
+
+            {/* Popup Body */}
+            <h2 className="text-2xl font-bold text-blue-600 text-center">
+              Create an Account
+            </h2>
+            <p className="text-gray-600 text-center mt-2">
+              Sign up to enjoy full access to all features on BANKITI.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-4">
+              <Link
+                to="/signup"
+                className="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
+              >
+                Sign Up
+              </Link>
+
+              <button
+                onClick={() => setShowPopup(false)}
+                className="w-full text-center border border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold py-3 rounded-xl transition"
+              >
+                Continue Browsing
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* --------------------------- PAGE CONTENT ---------------------------- */}
       {/* HERO SECTION */}
       <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-16">
         <motion.div
@@ -72,7 +148,8 @@ const HomePage = () => {
           </div>
         </motion.div>
 
-        {/* Image placeholder */}
+
+        {/* IMAGE */}
         <motion.div
           className="mt-10 lg:mt-0 w-full lg:w-1/2 flex justify-center"
           initial={{ opacity: 0, scale: 0.85 }}
@@ -87,7 +164,7 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* LOAN CALCULATOR */}
+      {/* ----------------------------- LOAN CALCULATOR ------------------------------ */}
       <section className="bg-white py-16 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
           <HiOutlineCalculator className="mr-2" /> Loan Calculator
@@ -106,7 +183,7 @@ const HomePage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {/* Loan Details Box */}
+          {/* Loan Details */}
           <div className="bg-gray-50 p-6 rounded-2xl shadow-md w-full md:w-1/3 text-left">
             <h3 className="text-lg font-semibold mb-4">Loan Details</h3>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
@@ -123,7 +200,7 @@ const HomePage = () => {
             </p>
           </div>
 
-          {/* Loan Summary Box */}
+          {/* Loan Summary */}
           <div className="bg-gray-50 p-6 rounded-2xl shadow-md w-full md:w-1/3 text-left">
             <h3 className="text-lg font-semibold mb-4">Your Loan Summary</h3>
             <p className="text-gray-500 mb-2 flex items-center gap-2">
@@ -151,7 +228,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* WHY CHOOSE BANKIT SECTION */}
+      {/* ---------------------------- WHY CHOOSE US ---------------------------- */}
       <section className="bg-gray-50 py-20 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
           Why Choose BANKITI
@@ -205,7 +282,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION */}
+      {/* ---------------------------- TESTIMONIALS ---------------------------- */}
       <section className="bg-white py-20 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
           <FaStar /> Testimonials

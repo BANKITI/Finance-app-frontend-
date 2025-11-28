@@ -62,20 +62,20 @@ const Navbar: React.FC = () => {
           ))}
 
           <div className="flex items-center space-x-4">
-            <motion.div whileHover={{ scale: 1.1 }}>
+            {/* <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 to="/login"
                 className="text-gray-700 hover:text-teal-700 transition font-medium"
               >
                 Login
               </Link>
-            </motion.div>
+            </motion.div> */}
             <motion.div whileHover={{ scale: 1.1 }}>
               <Link
-                to="/apply"
+                to="/login"
                 className="bg-orange-600 text-white px-5 py-2 rounded-full hover:bg-orange-700 transition shadow-md"
               >
-                Apply Now
+                Login
               </Link>
             </motion.div>
           </div>
@@ -115,19 +115,19 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link
+              {/* <Link
                 onClick={toggleMenu}
                 to="/login"
                 className="text-gray-700 hover:text-teal-700 transition"
               >
                 Login
-              </Link>
+              </Link> */}
               <Link
                 onClick={toggleMenu}
-                to="/apply"
+                to="/login"
                 className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
               >
-                Apply Now
+                Login
               </Link>
             </div>
           </motion.div>
