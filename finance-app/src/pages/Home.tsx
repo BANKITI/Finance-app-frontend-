@@ -22,22 +22,20 @@ const HomePage: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   // --------------------------------------------------
-  // POPUP LOGIC (FINAL VERSION)
-  // 1. Show popup after 1 minute
-  // 2. Do NOT show again after reload
-  // 3. Show only once per browser
+  // FINAL POPUP LOGIC (WORKS FOR DEV, PREVIEW & PROD)
+  // 1. Shows after 1 minute
+  // 2. Shows only once per browser
+  // 3. Never shows again after reload
   // --------------------------------------------------
   useEffect(() => {
-    const hasShownPopup = localStorage.getItem("popupShown");
+    const popupSeen = localStorage.getItem("bankiti_popup_v1");
 
-    // If popup already seen before, do NOT show again
-    if (hasShownPopup) return;
+    if (popupSeen === "yes") return;
 
-    // Show popup after 60 seconds
     const timer = setTimeout(() => {
       setShowPopup(true);
-      localStorage.setItem("popupShown", "true");
-    }, 60000); // 60000ms = 1 minute
+      localStorage.setItem("bankiti_popup_v1", "yes");
+    }, 60000); // 1 minute
 
     return () => clearTimeout(timer);
   }, []);
@@ -147,7 +145,6 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </motion.div>
-
 
         {/* IMAGE */}
         <motion.div
