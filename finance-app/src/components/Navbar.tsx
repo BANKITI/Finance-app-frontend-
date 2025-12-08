@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../context/AuthContext"; // <-- IMPORTANT
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth(); // <-- NEW
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -21,6 +29,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
       <div className="flex items-center justify-between px-6 py-4 md:px-12">
+        
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <motion.div
@@ -39,11 +48,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <motion.div
-              key={link.path}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div key={link.path} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to={link.path}
                 className={`relative text-gray-700 hover:text-teal-700 transition font-medium ${
@@ -61,24 +66,24 @@ const Navbar: React.FC = () => {
             </motion.div>
           ))}
 
-          <div className="flex items-center space-x-4">
-            {/* <motion.div whileHover={{ scale: 1.1 }}>
-              <Link
-                to="/login"
-                className="text-gray-700 hover:text-teal-700 transition font-medium"
+          {/* Login / Logout Button */}
+          <motion.div whileHover={{ scale: 1.1 }}>
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition shadow-md"
               >
-                Login
-              </Link>
-            </motion.div> */}
-            <motion.div whileHover={{ scale: 1.1 }}>
+                Logout
+              </button>
+            ) : (
               <Link
                 to="/login"
                 className="bg-orange-600 text-white px-5 py-2 rounded-full hover:bg-orange-700 transition shadow-md"
               >
                 Login
               </Link>
-            </motion.div>
-          </div>
+            )}
+          </motion.div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -107,28 +112,33 @@ const Navbar: React.FC = () => {
                   to={link.path}
                   onClick={toggleMenu}
                   className={`text-gray-700 hover:text-teal-700 transition ${
-                    location.pathname === link.path
-                      ? "font-semibold text-teal-700"
-                      : ""
+                    location.pathname === link.path ? "font-semibold text-teal-700" : ""
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              {/* <Link
-                onClick={toggleMenu}
-                to="/login"
-                className="text-gray-700 hover:text-teal-700 transition"
-              >
-                Login
-              </Link> */}
-              <Link
-                onClick={toggleMenu}
-                to="/login"
-                className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
-              >
-                Login
-              </Link>
+
+              {/* Login / Logout for Mobile */}
+              {isAuthenticated ? (
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    toggleMenu();
+                  }}
+                  className="bg-red-600 text-white w-full text-center py-2 rounded-full hover:bg-red-700 transition shadow-md"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link
+                  onClick={toggleMenu}
+                  to="/login"
+                  className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
+                >
+                  Login
+                </Link>
+              )}
             </div>
           </motion.div>
         )}

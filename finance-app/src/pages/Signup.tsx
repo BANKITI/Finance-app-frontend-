@@ -11,8 +11,13 @@ const Signup: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (isLogin) navigate("/dashboard");
-    else navigate("/account");
+
+    // Updated navigation logic
+    if (isLogin) {
+      navigate("/"); // LOGIN → Home
+    } else {
+      navigate("/account"); // SIGNUP → Account
+    }
   };
 
   return (
@@ -101,7 +106,6 @@ const Signup: React.FC = () => {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-9 text-gray-500 hover:text-green-700"
-              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? (
                 <AiOutlineEyeInvisible size={20} />
@@ -129,9 +133,6 @@ const Signup: React.FC = () => {
                   setShowConfirmPassword(!showConfirmPassword)
                 }
                 className="absolute right-3 top-9 text-gray-500 hover:text-green-700"
-                aria-label={
-                  showConfirmPassword ? "Hide password" : "Show password"
-                }
               >
                 {showConfirmPassword ? (
                   <AiOutlineEyeInvisible size={20} />

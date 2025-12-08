@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import PwaInstallPrompt from "../components/PwaInstallPrompt";
+
 import {
   FaLock,
   FaBolt,
@@ -21,24 +23,31 @@ import { HiOutlineCalculator } from "react-icons/hi";
 const HomePage: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  // --------------------------------------------------
-  // FINAL POPUP LOGIC (WORKS FOR DEV, PREVIEW & PROD)
-  // 1. Shows after 1 minute
-  // 2. Shows only once per browser
-  // 3. Never shows again after reload
-  // --------------------------------------------------
-  useEffect(() => {
-    const popupSeen = localStorage.getItem("bankiti_popup_v1");
+useEffect(() => {
+  const popupSeen = sessionStorage.getItem("bankiti_popup_seen");
+  const lastVisit = localStorage.getItem("bankiti_last_visit");
+  const now = Date.now();
 
-    if (popupSeen === "yes") return;
+  // Reset popup for a true revisit (30 minutes of inactivity)
+  if (lastVisit && now - Number(lastVisit) > 30 * 60 * 1000) {
+    sessionStorage.removeItem("bankiti_popup_seen");
+  }
 
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-      localStorage.setItem("bankiti_popup_v1", "yes");
-    }, 60000); // 1 minute
+  // Update last visit timestamp
+  localStorage.setItem("bankiti_last_visit", String(now));
 
-    return () => clearTimeout(timer);
-  }, []);
+  // If popup shown already in this browser session → stop
+  if (popupSeen === "yes") return;
+
+  // Show after 1 minute
+  const timer = setTimeout(() => {
+    setShowPopup(true);
+    sessionStorage.setItem("bankiti_popup_seen", "yes");
+  }, 60000);
+
+  return () => clearTimeout(timer);
+}, []);
+
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 relative">
@@ -337,6 +346,8 @@ const HomePage: React.FC = () => {
           ))}
         </div>
       </section>
+      <PwaInstallPrompt/>
+
     </div>
   );
 };

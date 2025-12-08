@@ -1,4 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// CONTEXT PROVIDER (NEW)
+import { AuthProvider } from "./context/AuthContext";
+
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -21,44 +25,73 @@ import Borrowdash from "./pages/Borrowdash";
 import Lenderdash from "./pages/Lenderdash";
 import Cardpayment from "./pages/Cardpayment";
 import Mobilepayment from "./pages/Mobilepayment";
-import ID from "./pages/ID"
+import ID from "./pages/ID";
 import Up from "./pages/Up";
 import Load from "./pages/Load";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import Logout from "./pages/Logout";
+
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/borrow" element={<Borrow />} />
-          <Route path="/lend" element={<Lend />} />
-          <Route path="/rates" element={<Rates />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="/info" element={<Info/>}/>
-          <Route path = "/submit" element={<Submit/>}/>
-          <Route path="/apply" element={<Apply />} />
-          <Route path="/account" element={<Account/>}/>
-          <Route path="/verification" element={<Verification/>}/>
-          <Route path="/application" element={<Application/>}/>
-          <Route path="/policy" element={<Policy/>}/>
-          <Route path="/borrowdash" element={<Borrowdash/>}/>
-          <Route path="/lenderdash" element={<Lenderdash/>}/>
-          <Route path="/cardpayment" element={<Cardpayment/>}/>
-          <Route path="/mobilepayment"
-          element={<Mobilepayment/>}/>
-          <Route path="/iD" element={<ID/>}/>
-          <Route path="/up" element={<Up/>}/>
-          <Route path="/load" element={<Load/>}/>
-          
-        </Routes>
-      </div>
-      <Footer/>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Navbar />
+
+        <div className="pt-20">
+          <Routes>
+
+            {/* PUBLIC ROUTES */}
+            <Route path="/" element={<Home />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/logout" element={<Logout />} />
+
+            <Route path="/borrow" element={<Borrow />} />
+            <Route path="/lend" element={<Lend />} />
+            <Route path="/rates" element={<Rates />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/submit" element={<Submit />} />
+            <Route path="/apply" element={<Apply />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/verification" element={<Verification />} />
+            <Route path="/application" element={<Application />} />
+            <Route path="/policy" element={<Policy />} />
+
+            {/* PROTECTED ROUTES */}
+            <Route
+              path="/borrowdash"
+              element={
+                <ProtectedRoute allowedRole="borrower">
+                  <Borrowdash />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/lenderdash"
+              element={
+                <ProtectedRoute allowedRole="lender">
+                  <Lenderdash />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* PAYMENT ROUTES */}
+            <Route path="/cardpayment" element={<Cardpayment />} />
+            <Route path="/mobilepayment" element={<Mobilepayment />} />
+            <Route path="/id" element={<ID />} />
+            <Route path="/up" element={<Up />} />
+            <Route path="/load" element={<Load />} />
+
+          </Routes>
+        </div>
+
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
 
