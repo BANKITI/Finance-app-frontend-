@@ -166,7 +166,7 @@ const How = () => {
         transition={{ duration: 0.5 }}
       >
         <Link
-          to="/login"
+          to="/signup"
           className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full shadow-md transition duration-300"
         >
           Get Started

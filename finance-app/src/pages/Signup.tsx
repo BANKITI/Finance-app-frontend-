@@ -12,11 +12,10 @@ const Signup: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Updated navigation logic
     if (isLogin) {
-      navigate("/"); // LOGIN → Home
+      navigate("/"); // Login → Home
     } else {
-      navigate("/account"); // SIGNUP → Account
+      navigate("/account"); // Signup → Account
     }
   };
 
@@ -40,32 +39,9 @@ const Signup: React.FC = () => {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="flex bg-gray-100 rounded-lg mb-8 overflow-hidden">
-          <button
-            onClick={() => setIsLogin(true)}
-            className={`w-1/2 py-2 font-medium transition ${
-              isLogin
-                ? "bg-green-700 text-white"
-                : "text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            Login
-          </button>
-          <button
-            onClick={() => setIsLogin(false)}
-            className={`w-1/2 py-2 font-medium transition ${
-              !isLogin
-                ? "bg-green-700 text-white"
-                : "text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            Sign Up
-          </button>
-        </div>
-
-        {/* Form */}
+        {/* FORM */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Name (Sign Up Only) */}
           {!isLogin && (
             <div>
               <label className="text-sm font-semibold text-gray-700">
@@ -115,7 +91,7 @@ const Signup: React.FC = () => {
             </button>
           </div>
 
-          {/* Confirm Password (Sign Up only) */}
+          {/* Confirm Password (Signup Only) */}
           {!isLogin && (
             <div className="relative">
               <label className="text-sm font-semibold text-gray-700">
@@ -129,9 +105,7 @@ const Signup: React.FC = () => {
               />
               <button
                 type="button"
-                onClick={() =>
-                  setShowConfirmPassword(!showConfirmPassword)
-                }
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="absolute right-3 top-9 text-gray-500 hover:text-green-700"
               >
                 {showConfirmPassword ? (
@@ -143,7 +117,7 @@ const Signup: React.FC = () => {
             </div>
           )}
 
-          {/* Terms (Sign Up only) */}
+          {/* Terms (Signup Only) */}
           {!isLogin && (
             <div className="flex items-start gap-2 mt-2">
               <input
@@ -171,7 +145,7 @@ const Signup: React.FC = () => {
             </div>
           )}
 
-          {/* Submit Button */}
+          {/* Button */}
           <button
             type="submit"
             className="w-full bg-green-700 hover:bg-green-800 text-white py-2 rounded-lg font-semibold transition"
@@ -179,7 +153,7 @@ const Signup: React.FC = () => {
             {isLogin ? "Login" : "Create Account"}
           </button>
 
-          {/* Toggle Text */}
+          {/* Toggle Text (Replaces Tabs!) */}
           <p className="text-sm text-center text-gray-600 mt-4">
             {isLogin ? (
               <>

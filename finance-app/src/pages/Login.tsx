@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useAuth } from "../context/AuthContext"; // Updated AuthContext import
+import { useAuth } from "../context/AuthContext";
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,46 +11,37 @@ const Login: React.FC = () => {
   const location = useLocation();
   const { login } = useAuth();
 
-  // Toggle password visibility
   const togglePassword = () => setShowPassword((prev) => !prev);
-
-  // Get the page user was trying to access
-  const from = (location.state as any)?.from?.pathname || (role === "borrower" ? "/borrowdash" : "/lenderdash");
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
 
-    // ----- FRONTEND LOGIN -----
-    login(role, "sample_token"); // sets AuthContext + localStorage
+    login(role, "sample_token");
 
-    // Redirect back to original page or default dashboard
-    navigate(from, { replace: true });
+    // ----- SMART REDIRECT -----
+    const from = (location.state as any)?.from?.pathname;
+
+    if (from) {
+      // User tried accessing a protected dashboard → send them back there
+      navigate(from, { replace: true });
+    } else {
+      // Normal login → go to home page
+      navigate("/", { replace: true });
+    }
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-8">
 
-        {/* Header */}
         <h1 className="text-3xl font-bold text-center mb-2">
           Welcome to <span className="text-teal-600">BANKITI</span>
         </h1>
+        
         <p className="text-center text-sm text-gray-500 mb-6">
-          Login or create an account to get started
+          Login to continue
         </p>
 
-        {/* Tabs */}
-        <div className="flex mb-6 border rounded-lg overflow-hidden">
-          <button className="flex-1 py-2 bg-gray-200 font-semibold">Login</button>
-          <Link
-            to="/signup"
-            className="flex-1 py-2 text-center bg-white hover:bg-gray-100 font-semibold"
-          >
-            Sign Up
-          </Link>
-        </div>
-
-        {/* Form */}
         <form className="space-y-4" onSubmit={handleLogin}>
 
           {/* Email */}
@@ -84,7 +75,7 @@ const Login: React.FC = () => {
             </div>
           </div>
 
-          {/* Role Select */}
+          {/* Role */}
           <div>
             <label className="block text-sm font-semibold mb-1">Select Role</label>
             <select
@@ -105,6 +96,13 @@ const Login: React.FC = () => {
             Login
           </button>
         </form>
+
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Don’t have an account?{" "}
+          <Link to="/signup" className="text-teal-600 font-semibold hover:underline">
+            Sign up
+          </Link>
+        </p>
 
       </div>
     </div>
