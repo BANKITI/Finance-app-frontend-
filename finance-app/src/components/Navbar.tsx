@@ -96,53 +96,64 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t shadow-sm"
-          >
-            <div className="flex flex-col space-y-4 px-6 py-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={toggleMenu}
-                  className={`text-gray-700 hover:text-teal-700 transition ${
-                    location.pathname === link.path ? "font-semibold text-teal-700" : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+      {/* Mobile Menu */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="md:hidden bg-white border-t shadow-sm"
+    >
+      <div className="flex flex-col space-y-4 px-6 py-4">
 
-              {/* Login / Logout for Mobile */}
-              {isAuthenticated ? (
-                <button
-                  onClick={() => {
-                    handleLogout();
-                    toggleMenu();
-                  }}
-                  className="bg-red-600 text-white w-full text-center py-2 rounded-full hover:bg-red-700 transition shadow-md"
-                >
-                  Logout
-                </button>
-              ) : (
-                <Link
-                  onClick={toggleMenu}
-                  to="/login"
-                  className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
-                >
-                  Login
-                </Link>
-              )}
-            </div>
-          </motion.div>
+        {/* --- MOBILE LINKS: ONLY Borrow & Lend --- */}
+        <Link
+          to="/borrow"
+          onClick={toggleMenu}
+          className={`text-gray-700 hover:text-teal-700 transition ${
+            location.pathname === "/borrow" ? "font-semibold text-teal-700" : ""
+          }`}
+        >
+          Borrow
+        </Link>
+
+        <Link
+          to="/lend"
+          onClick={toggleMenu}
+          className={`text-gray-700 hover:text-teal-700 transition ${
+            location.pathname === "/lend" ? "font-semibold text-teal-700" : ""
+          }`}
+        >
+          Lend
+        </Link>
+
+        {/* --- Login / Logout for Mobile --- */}
+        {isAuthenticated ? (
+          <button
+            onClick={() => {
+              handleLogout();
+              toggleMenu();
+            }}
+            className="bg-red-600 text-white w-full text-center py-2 rounded-full hover:bg-red-700 transition shadow-md"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            onClick={toggleMenu}
+            className="bg-orange-600 text-white w-full text-center py-2 rounded-full hover:bg-orange-700 transition shadow-md"
+          >
+            Login
+          </Link>
         )}
-      </AnimatePresence>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </nav>
   );
 };
