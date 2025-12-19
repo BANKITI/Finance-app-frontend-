@@ -6,25 +6,21 @@ const Account: React.FC = () => {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const navigate = useNavigate();
 
-  // Handle input change and auto-focus next field
+  // Handle input change
   const handleChange = (value: string, index: number) => {
-    if (!/^[0-9]?$/.test(value)) return; // ✅ Only digits 0–9 allowed
+    if (!/^[0-9]?$/.test(value)) return;
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // ✅ Auto-focus next input
+    // Auto-focus next input
     if (value && index < inputRefs.current.length - 1) {
       inputRefs.current[index + 1]?.focus();
     }
-
-    // ✅ Auto-submit when all digits are filled
-    if (newOtp.every((digit) => digit !== "")) {
-      handleVerifyAuto(newOtp);
-    }
   };
 
-  // Handle backspace to go to previous field
+  // Handle backspace
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
     index: number
@@ -34,56 +30,52 @@ const Account: React.FC = () => {
     }
   };
 
-  // Manual Verify button
+  // Verify OTP manually
   const handleVerify = (e: React.FormEvent) => {
     e.preventDefault();
+
     const enteredOtp = otp.join("");
+
     if (/^[0-9]{4}$/.test(enteredOtp)) {
-      navigate("/verification"); // Go to next page if OTP is valid
+      // ✅ TEMP: store OTP verification (backend later)
+      sessionStorage.setItem("otpVerified", "true");
+
+      // ✅ Go to Ghana Card upload page
+      navigate("/verification");
     } else {
       alert("Please enter a valid 4-digit OTP.");
     }
   };
 
-  // Auto verify when all fields are filled
-  const handleVerifyAuto = (newOtp: string[]) => {
-    const enteredOtp = newOtp.join("");
-    if (/^[0-9]{4}$/.test(enteredOtp)) {
-      navigate("/verification");
-    }
-  };
-
-  // Resend OTP button (ready for backend)
+  // Resend OTP (placeholder)
   const handleResend = () => {
-    console.log("Resending OTP...");
-    alert("A new OTP has been sent to your phone.");
+    alert("A new OTP has been sent.");
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
       <div className="bg-white shadow-xl rounded-2xl p-8 md:p-12 w-full max-w-md text-center">
-        {/* Placeholder for Image */}
+
+        {/* Image */}
         <div className="flex justify-center mb-6">
-          <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center">
-            {/* Replace this with your SVG or illustration */}
+          <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center">
             <img
-              src="./account.png"
-              alt="account verification"
-              className="w-16 h-16 object-contain"
+              src="/account.png"
+              alt="OTP verification"
+              className="w-14 h-14"
             />
           </div>
         </div>
 
-        {/* Heading */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+        <h1 className="text-2xl font-bold text-gray-800 mb-2">
           OTP Verification
         </h1>
+
         <p className="text-gray-500 mb-6">
-          Enter the OTP sent to{" "}
-          <span className="font-semibold text-gray-700">your email</span>
+          Enter the OTP sent to your email
         </p>
 
-        {/* OTP Inputs */}
+        {/* OTP FORM */}
         <form onSubmit={handleVerify}>
           <div className="flex justify-center gap-3 mb-8">
             {otp.map((digit, i) => (
@@ -93,26 +85,26 @@ const Account: React.FC = () => {
                 value={digit}
                 maxLength={1}
                 inputMode="numeric"
-                className="w-12 h-12 text-center text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-teal-600 outline-none"
+                className="w-12 h-12 text-center text-lg border border-gray-300 rounded-lg
+                          focus:ring-2 focus:ring-green-600 outline-none"
                 onChange={(e) => handleChange(e.target.value, i)}
                 onKeyDown={(e) => handleKeyDown(e, i)}
                 ref={(el) => {
-                  inputRefs.current[i] = el as HTMLInputElement | null;
+                  inputRefs.current[i] = el;
                 }}
               />
             ))}
+
           </div>
 
-          {/* Verify Button */}
           <button
             type="submit"
             className="w-full py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition"
           >
-            Verify & Proceed
+            Verify & Continue
           </button>
         </form>
 
-        {/* Resend Section */}
         <div className="mt-6 text-sm text-gray-600">
           Didn’t receive an OTP?{" "}
           <button

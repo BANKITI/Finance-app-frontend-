@@ -6,7 +6,6 @@ import { useAuth } from "../context/AuthContext";
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [role, setRole] = useState<"borrower" | "lender">("borrower");
   const navigate = useNavigate();
   const location = useLocation();
   const { login } = useAuth();
@@ -16,17 +15,22 @@ const Login: React.FC = () => {
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
 
-    login(role, "sample_token");
+    /**
+     * 🔒 BACKEND (later):
+     * response = { token }
+     */
+    const fakeToken = "sample_token";
 
-    // ----- SMART REDIRECT -----
-    const from = (location.state as any)?.from?.pathname;
+    login(null, fakeToken); // ✅ no roles
+
+    // 🔁 Redirect back or go to account overview
+    const from = (location.state as { from?: { pathname: string } })?.from
+      ?.pathname;
 
     if (from) {
-      // User tried accessing a protected dashboard → send them back there
       navigate(from, { replace: true });
     } else {
-      // Normal login → go to home page
-      navigate("/", { replace: true });
+      navigate("/accountoverview", { replace: true });
     }
   };
 
@@ -35,9 +39,9 @@ const Login: React.FC = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-8">
 
         <h1 className="text-3xl font-bold text-center mb-2">
-          Welcome to <span className="text-teal-600">BANKITI</span>
+          Welcome to <span className="text-teal-600">LENBOW</span>
         </h1>
-        
+
         <p className="text-center text-sm text-gray-500 mb-6">
           Login to continue
         </p>
@@ -46,9 +50,14 @@ const Login: React.FC = () => {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-semibold mb-1">Email</label>
+            <label htmlFor="email" className="block text-sm font-semibold mb-1">
+              Email
+            </label>
             <input
+              id="email"
+              name="email"
               type="email"
+              autoComplete="email"
               placeholder="example@gmail.com"
               className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none"
               required
@@ -57,10 +66,15 @@ const Login: React.FC = () => {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-semibold mb-1">Password</label>
+            <label htmlFor="password" className="block text-sm font-semibold mb-1">
+              Password
+            </label>
             <div className="relative">
               <input
+                id="password"
+                name="password"
                 type={showPassword ? "text" : "password"}
+                autoComplete="current-password"
                 placeholder="••••••••"
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none pr-10"
                 required
@@ -73,19 +87,6 @@ const Login: React.FC = () => {
                 {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
               </button>
             </div>
-          </div>
-
-          {/* Role */}
-          <div>
-            <label className="block text-sm font-semibold mb-1">Select Role</label>
-            <select
-              value={role}
-              onChange={(e) => setRole(e.target.value as "borrower" | "lender")}
-              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none"
-            >
-              <option value="borrower">Borrower</option>
-              <option value="lender">Lender</option>
-            </select>
           </div>
 
           {/* Login Button */}

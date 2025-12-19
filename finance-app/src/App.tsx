@@ -16,7 +16,8 @@ import Rates from "./pages/Rate";
 import Support from "./pages/Support";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
+import AccountOverview from "./pages/AccountOverview";
+import UpdateProfile from "./pages/UpdateProfile";
 import Info from "./pages/Info";
 import Submit from "./pages/Submit";
 import Apply from "./pages/Apply";
@@ -24,17 +25,17 @@ import Account from "./pages/Account";
 import Verification from "./pages/Verification";
 import Application from "./pages/Application";
 import Policy from "./pages/Policy";
-import Borrowdash from "./pages/Borrowdash";
-import Lenderdash from "./pages/Lenderdash";
+import LenderDashboard from "./pages/LenderDashboard";
 import Cardpayment from "./pages/Cardpayment";
 import Mobilepayment from "./pages/Mobilepayment";
-import ID from "./pages/ID";
-import Up from "./pages/Up";
-import Load from "./pages/Load";
+
+
+import Money from "./pages/Money";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import Logout from "./pages/Logout";
+
 
 import Footer from "./pages/Footer";
+import BorrowerDashboard from "./pages/BorrowerDashboard";
 
 function App() {
   return (
@@ -47,49 +48,39 @@ function App() {
           <Routes>
 
             {/* PUBLIC ROUTES */}
-            <Route path="/" element={<Home />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/" element={<HowItWorks />} />
+            <Route path="/home" element={<Home />} />
+            
             <Route path="/borrow" element={<Borrow />} />
             <Route path="/lend" element={<Lend />} />
             <Route path="/rates" element={<Rates />} />
             <Route path="/support" element={<Support />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-
-            <Route path="/logout" element={<Logout />} />
+            <Route path="/profile" element={<UpdateProfile />} />
+            <Route path="/dashboard/lender" element={<LenderDashboard />} />
+            <Route path="/accountoverview" element={<AccountOverview />} />
+            <Route path="/money" element={<Money/>} />
             <Route path="/info" element={<Info />} />
             <Route path="/submit" element={<Submit />} />
             <Route path="/apply" element={<Apply />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/verify" element={<Account />} />
             <Route path="/verification" element={<Verification />} />
+
             <Route path="/application" element={<Application />} />
             <Route path="/policy" element={<Policy />} />
-
-            {/* PROTECTED DASHBOARDS */}
-            <Route
-              path="/borrowdash"
-              element={
-                <ProtectedRoute allowedRole="borrower">
-                  <Borrowdash />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/lenderdash"
-              element={
-                <ProtectedRoute allowedRole="lender">
-                  <Lenderdash />
-                </ProtectedRoute>
-              }
-            />
+            
+             <Route path="/dashboard/borrower" element={<BorrowerDashboard/>} />
+             <Route element={<ProtectedRoute />}>
+            <Route path="/accountoverview" element={<AccountOverview />} />
+          </Route>
 
             {/* PAYMENTS */}
             <Route path="/cardpayment" element={<Cardpayment />} />
             <Route path="/mobilepayment" element={<Mobilepayment />} />
-            <Route path="/id" element={<ID />} />
-            <Route path="/up" element={<Up />} />
-            <Route path="/load" element={<Load />} />
+           
+            
+           
 
           </Routes>
         </div>

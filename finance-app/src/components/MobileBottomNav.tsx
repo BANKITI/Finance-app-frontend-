@@ -10,8 +10,9 @@ const MobileBottomNav = () => {
   const location = useLocation();
 
   const navItems = [
-    { label: "Home", icon: <HiHome size={24} />, path: "/" },
-    { label: "How It Works", icon: <HiQuestionMarkCircle size={24} />, path: "/how-it-works" },
+    { label: "How It Works", icon: <HiQuestionMarkCircle size={24} />, path: "/" },
+    { label: "Home", icon: <HiHome size={24} />, path: "/home" },
+    
     { label: "Rates & Fees", icon: <HiCash size={24} />, path: "/rates" },
     { label: "Support", icon: <HiSupport size={24} />, path: "/support" },
   ];

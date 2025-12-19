@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { BsShieldCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import PwaInstallPrompt from "../components/PwaInstallPrompt";
 
 const steps = [
   {
@@ -48,7 +49,7 @@ const How = () => {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-          How <span className="text-teal-600">BANKITI</span> Works
+          How <span className="text-teal-600">LENBOW</span> Works
         </h1>
         <p className="text-gray-600 mt-3">
           Our platform makes lending and borrowing simple, secure, and transparent.  
@@ -172,6 +173,7 @@ const How = () => {
           Get Started
         </Link>
       </motion.div>
+      <PwaInstallPrompt/>
     </div>
   );
 };

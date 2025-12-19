@@ -30,9 +30,9 @@ const Footer = () => {
         >
           <div className="flex items-center mb-3">
             <div className="bg-teal-600 text-white font-bold text-xl w-8 h-8 flex items-center justify-center rounded-md mr-2">
-              B
+              L
             </div>
-            <h2 className="font-semibold text-lg text-teal-700">BANKITI</h2>
+            <h2 className="font-semibold text-lg text-teal-700">LENBOW</h2>
           </div>
           <p className="text-sm text-gray-600 mb-4">
             Smart lending and borrowing made simple. Connecting borrowers and
@@ -58,16 +58,16 @@ const Footer = () => {
                 How It Works
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/borrow" className="hover:text-teal-600 transition">
                 Borrow
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="/lend" className="hover:text-teal-600 transition">
                 Lend
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/rates" className="hover:text-teal-600 transition">
                 Rates & Fees
@@ -99,7 +99,7 @@ const Footer = () => {
                 Contact Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/policy" className="hover:text-teal-600 transition">
                 Privacy Policy
               </Link>
@@ -108,7 +108,7 @@ const Footer = () => {
               <Link to="/policy" className="hover:text-teal-600 transition">
                 Terms of Service
               </Link>
-            </li>
+            </li> */}
           </ul>
         </motion.div>
 
@@ -130,7 +130,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-teal-600" />
-              <span>support@bankiti.com</span>
+              <span>support@lenbow.com</span>
             </li>
           </ul>
         </motion.div>
@@ -140,7 +140,7 @@ const Footer = () => {
       <div className="border-t border-gray-200 mt-6">
         <p className="text-center text-sm text-gray-500 py-4">
           © {new Date().getFullYear()}{" "}
-          <span className="text-teal-600 font-medium">BANKITI</span>. All rights
+          <span className="text-teal-600 font-medium">LENBOW</span>. All rights
           reserved.
         </p>
       </div>

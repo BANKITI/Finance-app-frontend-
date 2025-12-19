@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import PwaInstallPrompt from "../components/PwaInstallPrompt";
 
 import {
   FaLock,
@@ -120,11 +119,11 @@ useEffect(() => {
           </h1>
 
           <p className="text-gray-600 mt-4">
-            Connect with trusted lenders and borrowers on <b>BANKITI</b>.  
+            Connect with trusted lenders and borrowers on <b>LENBOW</b>.  
             Transparent rates, fast approvals, and secure transactions all in one platform.
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-6">
+          {/* <div className="flex flex-wrap gap-4 mt-6">
             <Link
               to="/borrow"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
@@ -137,7 +136,7 @@ useEffect(() => {
             >
               Lend & Earn
             </Link>
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-6 mt-8 text-gray-600 text-sm">
             <div className="flex items-center gap-2">
@@ -225,19 +224,19 @@ useEffect(() => {
         </motion.div>
 
         <div className="mt-10">
-          <Link
+          {/* <Link
             to="/apply"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300"
           >
             Apply for This Loan
-          </Link>
+          </Link> */}
         </div>
       </section>
 
       {/* ---------------------------- WHY CHOOSE US ---------------------------- */}
       <section className="bg-gray-50 py-20 px-6 lg:px-20 text-center">
         <div className="inline-flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold text-sm mb-3">
-          Why Choose BANKITI
+          Why Choose LENBOW
         </div>
 
         <h2 className="text-3xl font-bold">
@@ -346,7 +345,7 @@ useEffect(() => {
           ))}
         </div>
       </section>
-      <PwaInstallPrompt/>
+      
 
     </div>
   );

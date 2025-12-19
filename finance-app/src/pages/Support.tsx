@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdEmail, MdPhone, MdChat, MdAccessTime } from "react-icons/md";
+import { MdEmail, MdPhone, MdAccessTime } from "react-icons/md";
 
 const Support: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -58,7 +58,7 @@ const Support: React.FC = () => {
             <MdEmail />
           </div>
           <h3 className="font-semibold text-gray-800">Email Support</h3>
-          <p className="text-gray-600 text-sm mt-1">support@bankiti.com</p>
+          <p className="text-gray-600 text-sm mt-1">support@lenbow.com</p>
         </div>
 
         <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
@@ -69,13 +69,13 @@ const Support: React.FC = () => {
           <p className="text-gray-600 text-sm mt-1">+233 **********</p>
         </div>
 
-        <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
+        {/* <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
           <div className="flex justify-center mb-3 text-teal-700 text-3xl">
             <MdChat />
           </div>
           <h3 className="font-semibold text-gray-800">Live Chat</h3>
           <p className="text-gray-600 text-sm mt-1">Available 24/7</p>
-        </div>
+        </div> */}
 
         <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
           <div className="flex justify-center mb-3 text-teal-700 text-3xl">

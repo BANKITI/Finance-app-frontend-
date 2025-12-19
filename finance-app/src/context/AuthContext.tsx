@@ -1,58 +1,47 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  type ReactNode,
-} from "react";
+import React, { createContext, useContext, useState } from "react";
+
+type Role = "borrower" | "lender" | null;
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  userRole: "borrower" | "lender" | null;
-  login: (role: "borrower" | "lender", token?: string) => void;
+  role: Role;
+  login: (role: Role, token: string) => void;
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | null>(null);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userRole, setUserRole] = useState<"borrower" | "lender" | null>(null);
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    Boolean(localStorage.getItem("bankiti_token"))
+  );
+  const [role, setRole] = useState<Role>(
+    (localStorage.getItem("bankiti_role") as Role) || null
+  );
 
-  // Load auth state from localStorage on mount
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    const role = localStorage.getItem("userRole") as "borrower" | "lender" | null;
-    if (token && role) {
-      setIsAuthenticated(true);
-      setUserRole(role);
-    }
-  }, []);
-
-  const login = (role: "borrower" | "lender", token: string = "sample_token") => {
-    localStorage.setItem("authToken", token);
-    localStorage.setItem("userRole", role);
+  const login = (userRole: Role, token: string) => {
+    localStorage.setItem("bankiti_token", token);
+    localStorage.setItem("bankiti_role", userRole || "");
     setIsAuthenticated(true);
-    setUserRole(role);
+    setRole(userRole);
   };
 
   const logout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userRole");
+    localStorage.removeItem("bankiti_token");
+    localStorage.removeItem("bankiti_role");
     setIsAuthenticated(false);
-    setUserRole(null);
+    setRole(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, userRole, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, role, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Custom hook to access auth context
 export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) throw new Error("useAuth must be used within an AuthProvider");
-  return context;
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
 };

@@ -18,10 +18,11 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "How It Works", path: "/how-it-works" },
-    { name: "Borrow", path: "/borrow" },
-    { name: "Lend", path: "/lend" },
+    { name: "How It Works", path: "/" },
+    { name: "Home", path: "/home" },
+    
+    // { name: "Borrow", path: "/borrow" },
+    // { name: "Lend", path: "/lend" },
     { name: "Rates & Fees", path: "/rates" },
     { name: "Support", path: "/support" },
   ];
@@ -38,10 +39,10 @@ const Navbar: React.FC = () => {
             transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
             className="bg-teal-600 text-white font-bold px-2 py-1 rounded"
           >
-            B
+            L
           </motion.div>
           <span className="text-teal-700 font-extrabold text-xl tracking-wide">
-            BANKITI
+            LENBOW
           </span>
         </Link>
 
@@ -107,9 +108,9 @@ const Navbar: React.FC = () => {
       className="md:hidden bg-white border-t shadow-sm"
     >
       <div className="flex flex-col space-y-4 px-6 py-4">
-
+          <p>Borrowing and Lending made easy</p>
         {/* --- MOBILE LINKS: ONLY Borrow & Lend --- */}
-        <Link
+        {/* <Link
           to="/borrow"
           onClick={toggleMenu}
           className={`text-gray-700 hover:text-teal-700 transition ${
@@ -127,7 +128,7 @@ const Navbar: React.FC = () => {
           }`}
         >
           Lend
-        </Link>
+        </Link> */}
 
         {/* --- Login / Logout for Mobile --- */}
         {isAuthenticated ? (
