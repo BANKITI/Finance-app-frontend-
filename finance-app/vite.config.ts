@@ -12,7 +12,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       manifest: {
         name: "finance-app",
-        short_name: "BANKITI",
+        short_name: "LENBOW",
         description: "A Progressive Web App built with React + Vite",
         theme_color: "#0d6efd",
         background_color: "#ffffff",
