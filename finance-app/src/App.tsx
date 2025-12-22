@@ -59,7 +59,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<UpdateProfile />} />
             <Route path="/dashboard/lender" element={<LenderDashboard />} />
-            <Route path="/accountoverview" element={<AccountOverview />} />
+            {/* <Route path="/accountoverview" element={<AccountOverview />} /> */}
             <Route path="/money" element={<Money/>} />
             <Route path="/info" element={<Info />} />
             <Route path="/submit" element={<Submit />} />
@@ -71,9 +71,20 @@ function App() {
             <Route path="/policy" element={<Policy />} />
             
              <Route path="/dashboard/borrower" element={<BorrowerDashboard/>} />
-             <Route element={<ProtectedRoute />}>
-            <Route path="/accountoverview" element={<AccountOverview />} />
-          </Route>
+            
+                 <Route
+                      path="/accountoverview"
+                      element={
+                        <ProtectedRoute >
+                          <AccountOverview />
+                        </ProtectedRoute>
+                      }
+          />
+
+          
+            
+            
+          
 
             {/* PAYMENTS */}
             <Route path="/cardpayment" element={<Cardpayment />} />

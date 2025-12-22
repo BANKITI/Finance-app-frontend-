@@ -123,20 +123,20 @@ useEffect(() => {
             Transparent rates, fast approvals, and secure transactions all in one platform.
           </p>
 
-          {/* <div className="flex flex-wrap gap-4 mt-6">
+          <div className="flex flex-wrap gap-4 mt-6">
             <Link
-              to="/borrow"
+              to="/accountoverview"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
             >
               Borrow Now
             </Link>
             <Link
-              to="/lend"
+              to="/accountoverview"
               className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
             >
               Lend & Earn
             </Link>
-          </div> */}
+          </div>
 
           <div className="flex items-center gap-6 mt-8 text-gray-600 text-sm">
             <div className="flex items-center gap-2">
